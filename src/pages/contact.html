@@ -3,49 +3,43 @@
   "description": "Questions, volunteering or a student we should know about? Write to the Fr. C.O. Vargis Scholarship Fund in Houston, Texas.",
   "nav": "contact"
 } -->
-<section class="page-hero" aria-labelledby="page-title">
-  <div class="wrap">
-    <p class="eyebrow" data-reveal>Contact</p>
-    <h1 id="page-title" class="display" data-reveal style="--i:1">We'd love to <span class="mark">hear from you.</span></h1>
-    <p class="lead" data-reveal style="--i:2">Questions, volunteering, or a student you think we should know about. Pick the inbox that fits, or send a note below.</p>
+<section class="folio folio--solo" aria-labelledby="page-title">
+  <div class="wrap grid12">
+    <div class="folio__text">
+      <h1 id="page-title" class="display">We’d love to <span class="accent">hear from you.</span></h1>
+      <p class="lead">Questions, volunteering, or a student you think we should know about. Pick the inbox that fits, or send a note below.</p>
+    </div>
   </div>
 </section>
 
-<section class="wrap" aria-label="Email addresses">
-  <ul class="contact-cards" role="list">
-    <li class="bezel bezel--pad" data-reveal>
-      <div class="bezel__core">
-        <h2 class="eyebrow eyebrow--muted">General &amp; volunteering</h2>
-        <p>Questions about the Fund, partnerships, or helping at an event.</p>
-        <a class="email" href="mailto:president@frcovargisfund.org">president@frcovargisfund.org</a>
-      </div>
-    </li>
-    <li class="bezel bezel--pad" data-reveal style="--i:1">
-      <div class="bezel__core">
-        <h2 class="eyebrow eyebrow--muted">Scholarships &amp; sponsorship</h2>
-        <p>Applications, eligibility, and sponsoring or hosting a dinner table.</p>
-        <a class="email" href="mailto:scholarship@frcovargisfund.org">scholarship@frcovargisfund.org</a>
-      </div>
-    </li>
-    <li class="bezel bezel--pad" data-reveal style="--i:2">
-      <div class="bezel__core">
-        <h2 class="eyebrow eyebrow--muted">Gifts &amp; Zelle</h2>
-        <p>Questions about a donation, receipts, or giving by Zelle.</p>
-        <a class="email" href="mailto:finance@frcovargisfund.org">finance@frcovargisfund.org</a>
-      </div>
-    </li>
-  </ul>
+<section class="leaf" aria-label="Email addresses" style="padding-top:0">
+  <div class="wrap">
+    <ul class="inboxes" role="list">
+      <li>
+        <div><h2 class="h3">General and volunteering</h2><p class="small muted">Questions about the Fund, partnerships, or helping at an event.</p></div>
+        <a class="ink-link" href="mailto:president@frcovargisfund.org">president@<wbr>frcovargisfund.org</a>
+      </li>
+      <li>
+        <div><h2 class="h3">Scholarships and sponsorship</h2><p class="small muted">Applications, eligibility, and sponsoring or hosting a dinner table.</p></div>
+        <a class="ink-link" href="mailto:scholarship@frcovargisfund.org">scholarship@<wbr>frcovargisfund.org</a>
+      </li>
+      <li>
+        <div><h2 class="h3">Gifts and Zelle</h2><p class="small muted">Questions about a donation, receipts, or giving by Zelle.</p></div>
+        <a class="ink-link" href="mailto:finance@frcovargisfund.org">finance@<wbr>frcovargisfund.org</a>
+      </li>
+    </ul>
+  </div>
 </section>
 
-<section class="section" aria-labelledby="form-title">
+<section class="leaf leaf--alt" aria-labelledby="form-title">
   <div class="wrap split">
-    <div class="split__aside">
-      <h2 id="form-title" class="h2">Send <span class="mark">a note.</span></h2>
-      <p class="lead">This opens a ready-to-send email in your mail app, addressed to the right person.</p>
-      <dl class="fact-list">
-        <div><dt>Mailing address</dt><dd>13133 Old Richmond Rd.<br>Houston, TX 77099</dd></div>
-        <div><dt>Follow along</dt><dd><a href="https://www.facebook.com/FrCOVargisScholarshipFund">Facebook</a></dd></div>
-      </dl>
+    <div>
+      <h2 id="form-title" class="h2">Send <span class="accent">a note.</span></h2>
+      <p class="lead" style="margin-top:1.25rem">This opens a ready-to-send email in your mail app, addressed to the right person.</p>
+      <ul class="notes" role="list" style="margin-top:2rem">
+        <li><span class="pencil pencil--accent">by post</span><address class="small">13133 Old Richmond Rd.<br>Houston, TX 77099</address></li>
+        <li><span class="pencil pencil--accent">follow along</span><a class="ink-link" href="https://www.facebook.com/FrCOVargisScholarshipFund">Facebook {{icon:external}}</a></li>
+      </ul>
     </div>
     <form class="form" data-mailto-form novalidate>
       <div class="field">
@@ -74,9 +68,7 @@
         <textarea id="message" name="message" required aria-describedby="message-error" data-error="Please write a short message."></textarea>
         <p class="field__error" id="message-error"></p>
       </div>
-      <div class="btn-row">
-        <button class="btn btn--dark" type="submit">Write the email <span class="btn__chip">{{icon:arrow}}</span></button>
-      </div>
+      <div class="actions"><button class="btn btn--cloth" type="submit">Write the email {{icon:arrow}}</button></div>
       <p class="form__status" role="status"></p>
     </form>
   </div>

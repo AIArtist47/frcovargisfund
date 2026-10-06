@@ -1,5 +1,5 @@
 // Site behaviour: smooth scroll, time-bound content, menu dialog, floating
-// island nav, scroll reveals, click-to-play video, copy buttons, lightbox,
+// masthead, print mounting, click-to-play video, copy buttons, lightbox,
 // contact form.
 (() => {
   const root = document.documentElement;
@@ -44,8 +44,15 @@
   document.querySelectorAll("[data-expires]").forEach((el) => {
     if (now > Date.parse(el.dataset.expires)) el.remove();
   });
+  // Whole calendar days in Houston, so "In 31 days" means the same thing on
+  // every clock: Oct 6 to Nov 6 is 31, whatever the hour.
+  const houstonDay = (time) => {
+    const [y, m, d] = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago", year: "numeric", month: "2-digit", day: "2-digit" })
+      .format(time).split("-").map(Number);
+    return Date.UTC(y, m - 1, d) / 86_400_000;
+  };
   document.querySelectorAll("[data-countdown]").forEach((el) => {
-    const days = Math.ceil((Date.parse(el.dataset.countdown) - now) / 86_400_000);
+    const days = houstonDay(Date.parse(el.dataset.countdown)) - houstonDay(now);
     if (days > 1) el.textContent = `In ${days} days`;
     else if (days === 1) el.textContent = "Tomorrow";
     else if (days === 0) el.textContent = "Tonight";
@@ -99,20 +106,18 @@
     });
   }
 
-  /* ---------- Floating island nav ---------- */
+  /* ---------- Masthead: glassine backing once the page has moved ---------- */
   const header = document.querySelector("[data-header]");
-  const island = document.querySelector("[data-island]");
-  if (header && island && "IntersectionObserver" in window) {
-    new IntersectionObserver(([entry]) => {
-      const show = !entry.isIntersecting;
-      island.classList.toggle("is-visible", show);
-      if (!root.classList.contains("menu-open")) island.inert = !show;
-      else inertBefore.set(island, !show);
-    }).observe(header);
+  if (header && "IntersectionObserver" in window) {
+    const sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "position:absolute;top:0;left:0;width:1px;height:120px;pointer-events:none";
+    document.body.prepend(sentinel);
+    new IntersectionObserver(([entry]) => header.classList.toggle("is-stuck", !entry.isIntersecting)).observe(sentinel);
   }
 
-  /* ---------- Scroll reveals ---------- */
-  const revealables = document.querySelectorAll("[data-reveal], .strip");
+  /* ---------- Mounting: prints settle as they reach the reader ---------- */
+  const revealables = document.querySelectorAll("[data-mount]");
   if ("IntersectionObserver" in window && !reduceMotion.matches) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -167,7 +172,7 @@
   const lightbox = document.querySelector("[data-lightbox]");
   if (lightbox && typeof lightbox.showModal === "function") {
     const items = [...document.querySelectorAll("[data-lightbox-item]")];
-    const caption = lightbox.querySelector("figcaption");
+    const caption = lightbox.querySelector("[data-lightbox-caption]");
     const image = document.createElement("img");
     caption.before(image);
     const count = lightbox.querySelector("[data-lightbox-count]");

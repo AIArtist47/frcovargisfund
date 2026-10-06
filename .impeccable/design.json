@@ -1,0 +1,532 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-06T07:43:45.847Z",
+  "title": "Design System: Fr. C.O. Vargis Scholarship Fund",
+  "extensions": {
+    "colorMeta": {
+      "g100": {
+        "role": "neutral",
+        "displayName": "Album Leaf",
+        "canonical": "#f8f9fa",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      },
+      "g200": {
+        "role": "neutral",
+        "displayName": "Alternate Leaf",
+        "canonical": "#e9ecef",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      },
+      "g300": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#dee2e6",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#dee2e6",
+          "#f8f9fa"
+        ]
+      },
+      "g400": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#ced4da",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      },
+      "g500": {
+        "role": "neutral",
+        "displayName": "Underline Gray",
+        "canonical": "#adb5bd",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      },
+      "g600": {
+        "role": "neutral",
+        "displayName": "Large-Type Gray",
+        "canonical": "#6c757d",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      },
+      "g700": {
+        "role": "secondary",
+        "displayName": "Bookcloth Slate",
+        "canonical": "#495057",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      },
+      "g800": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "#343a40",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      },
+      "g900": {
+        "role": "primary",
+        "displayName": "Bookcloth Black",
+        "canonical": "#212529",
+        "tonalRamp": [
+          "#212529",
+          "#343a40",
+          "#495057",
+          "#6c757d",
+          "#adb5bd",
+          "#ced4da",
+          "#e9ecef",
+          "#f8f9fa"
+        ]
+      }
+    },
+    "roleTokens": [
+      {
+        "name": "--leaf",
+        "value": "var(--g100)",
+        "purpose": "Page ground."
+      },
+      {
+        "name": "--leaf-2",
+        "value": "var(--g200)",
+        "purpose": "Alternate leaf."
+      },
+      {
+        "name": "--pencil",
+        "value": "var(--g900)",
+        "purpose": "Headings, strong text."
+      },
+      {
+        "name": "--pencil-soft",
+        "value": "var(--g800)",
+        "purpose": "Body text."
+      },
+      {
+        "name": "--pencil-dim",
+        "value": "var(--g700)",
+        "purpose": "Secondary text, hints, dates."
+      },
+      {
+        "name": "--rule",
+        "value": "var(--g300)",
+        "purpose": "Row hairlines (translucent g100 on cloth)."
+      },
+      {
+        "name": "--rule-strong",
+        "value": "var(--g400)",
+        "purpose": "Rule above a register, slot inset ring."
+      },
+      {
+        "name": "--accent",
+        "value": "var(--g600)",
+        "purpose": "Emphasis inside display/headline type only."
+      },
+      {
+        "name": "--accent-strong",
+        "value": "var(--g900)",
+        "purpose": "Pencil accent, link hover."
+      },
+      {
+        "name": "--give",
+        "value": "var(--g900)",
+        "purpose": "Give door and give cloth."
+      },
+      {
+        "name": "--give-lift",
+        "value": "var(--g800)",
+        "purpose": "Give cloth hover."
+      },
+      {
+        "name": "--study",
+        "value": "var(--g700)",
+        "purpose": "Study door and study cloth."
+      },
+      {
+        "name": "--study-lift",
+        "value": "var(--g800)",
+        "purpose": "Study cloth hover."
+      },
+      {
+        "name": "--cloth-ink",
+        "value": "var(--g100)",
+        "purpose": "Text and headings on cloth."
+      },
+      {
+        "name": "--cloth-ink-soft",
+        "value": "var(--g300)",
+        "purpose": "Body text on cloth."
+      },
+      {
+        "name": "--cloth-accent",
+        "value": "var(--g400)",
+        "purpose": "Heading emphasis on cloth."
+      },
+      {
+        "name": "--glassine",
+        "value": "rgb(248 249 250 / 0.55)",
+        "purpose": "Interleaf veil over the menu."
+      },
+      {
+        "name": "--radius",
+        "value": "16px",
+        "purpose": "One corner for every card and photo container (pinned by the client): prints, slots, doors, status note, lightbox image, Donorbox container. Controls stay at 3px."
+      },
+      {
+        "name": "--rest",
+        "value": "0 0 0 transparent",
+        "purpose": "Per-container resting shadow: none on photographs; inset 1px g400 on slots; 1px g300 outer ring on the Donorbox container. Mounting composes over it."
+      }
+    ],
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "One per page: the leaf title (h1)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Leaf headings (h2), colophon signature, menu names at their own sizes."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Door titles, gathering entries, degree schools, board member names."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The line under a display title (40ch); long-form reading bodies."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text at 62ch; 500 for links, 600 for strong text and buttons."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Dates, detail lines, hints; tabular figures for dates and prices."
+      },
+      "pencil": {
+        "displayName": "Pencil",
+        "purpose": "Kalam captions, margin notes, menu notes, entry states."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lifted",
+        "value": "0 34px 46px -22px rgb(33 37 41 / 0.32), 0 8px 14px rgb(33 37 41 / 0.08)",
+        "purpose": "A photograph before it lands; the lightbox image. There is no resting print shadow: photographs sit flat on the leaf."
+      },
+      {
+        "name": "door",
+        "value": "0 14px 26px -18px rgb(33 37 41 / 0.5)",
+        "purpose": "Bookcloth doors lying on the leaf."
+      },
+      {
+        "name": "cloth-button",
+        "value": "inset 0 0 0 1px rgb(248 249 250 / 0.08), 0 8px 18px -10px rgb(33 37 41 / 0.45)",
+        "purpose": "Cloth buttons."
+      },
+      {
+        "name": "paper-button",
+        "value": "0 0 0 1px #ced4da, 0 8px 18px -12px rgb(33 37 41 / 0.35)",
+        "purpose": "Paper buttons."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(0.19, 1, 0.22, 1)",
+        "purpose": "Mounting: a photograph settling flat onto the leaf; menu item settle."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "State transitions: hover, caption write-on, menu fade."
+      },
+      {
+        "name": "mount",
+        "value": "translateY(-12px) scale(1.025) with shadow-lifted over --rest, settling to transform none and --rest; transform and box-shadow 1.1s ease-settle, +110ms per index; caption clip-path 1.2s ease-out after +450ms",
+        "purpose": "The one authored moment, triggered by IntersectionObserver (rootMargin 0 0 -8% 0); static under prefers-reduced-motion."
+      },
+      {
+        "name": "menu-stagger",
+        "value": "40ms per item + 60ms",
+        "purpose": "Menu names settling in."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "Lenis 1.3.26 (SRI), lerp 0.09",
+        "purpose": "Page scrolling; skipped under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "doors-stack",
+        "value": "480px"
+      },
+      {
+        "name": "sm",
+        "value": "600px"
+      },
+      {
+        "name": "rows",
+        "value": "700px"
+      },
+      {
+        "name": "registers",
+        "value": "800px"
+      },
+      {
+        "name": "md",
+        "value": "900px"
+      },
+      {
+        "name": "lg",
+        "value": "1000px"
+      }
+    ],
+    "textures": [
+      {
+        "name": "paper-grain",
+        "value": "fixed SVG fractal noise, opacity 0.05, multiply",
+        "purpose": "Album paper over every page."
+      },
+      {
+        "name": "weave",
+        "value": "two SVG fractalNoise layers (0.018 x 0.9 and 0.9 x 0.018)",
+        "purpose": "Bookcloth on doors, cloth buttons, cloth leaves, notice strip."
+      }
+    ],
+    "accessibility": [
+      "Minimum target 44px; buttons 48px; fields 50px.",
+      "Focus: 2px solid g900 outline at 3px offset (1px on fields).",
+      "g600 only for large text and decoration.",
+      "Menu dialog makes all siblings inert; Escape closes; focus returns to trigger.",
+      "All motion collapses under prefers-reduced-motion."
+    ],
+    "siteTitle": {
+      "fontFamily": "EB Garamond, Garamond, Georgia, serif",
+      "fontSize": "26px",
+      "fontWeight": 400,
+      "lineHeight": 1.1,
+      "letterSpacing": "0.03em",
+      "textTransform": "uppercase",
+      "lines": [
+        "The Father C.O. Vargis",
+        "Scholarship Fund"
+      ],
+      "mobile": "clamp(14px, 3.9vw, 26px) below 722px; masthead Donate yields to the menu below 360px",
+      "pinnedBy": "client, 2026-10-06"
+    }
+  },
+  "components": [
+    {
+      "name": "Cloth Button",
+      "kind": "button",
+      "refersTo": "button-cloth",
+      "description": "Primary action in bookcloth: Donate and each leaf's main action.",
+      "html": "<a class=\"ds-btn ds-btn-cloth\" href=\"#\">Give to the fund <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6rem; min-height: 48px; padding: 0.65rem 1.2rem 0.6rem; border: 0; border-radius: 3px; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; font-size: 1rem; font-weight: 600; line-height: 1.1; letter-spacing: 0.01em; text-decoration: none; cursor: pointer; transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-btn svg { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-btn-cloth { background-color: #212529; color: #f8f9fa; box-shadow: inset 0 0 0 1px rgb(248 249 250 / 0.08), 0 8px 18px -10px rgb(33 37 41 / 0.45); } .ds-btn-cloth:hover { background-color: #343a40; } .ds-btn:hover svg { transform: translateX(3px); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #212529; outline-offset: 3px; }"
+    },
+    {
+      "name": "Study Button",
+      "kind": "button",
+      "refersTo": "button-study",
+      "description": "Scholar-side action in slate bookcloth.",
+      "html": "<a class=\"ds-btn-study\" href=\"#\">Who qualifies</a>",
+      "css": ".ds-btn-study { display: inline-flex; align-items: center; min-height: 48px; padding: 0.65rem 1.2rem 0.6rem; border-radius: 3px; background-color: #495057; color: #f8f9fa; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; font-size: 1rem; font-weight: 600; text-decoration: none; box-shadow: inset 0 0 0 1px rgb(248 249 250 / 0.08), 0 8px 18px -10px rgb(33 37 41 / 0.45); transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-btn-study:hover { background-color: #343a40; } .ds-btn-study:focus-visible { outline: 2px solid #212529; outline-offset: 3px; }"
+    },
+    {
+      "name": "Paper Button",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Secondary action on leaf or cloth.",
+      "html": "<a class=\"ds-btn-paper\" href=\"#\">Copy Zelle address</a>",
+      "css": ".ds-btn-paper { display: inline-flex; align-items: center; min-height: 48px; padding: 0.65rem 1.2rem 0.6rem; border-radius: 3px; background: #f8f9fa; color: #212529; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; font-size: 1rem; font-weight: 600; text-decoration: none; box-shadow: 0 0 0 1px #ced4da, 0 8px 18px -12px rgb(33 37 41 / 0.35); transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-btn-paper:hover { background: #e9ecef; } .ds-btn-paper:focus-visible { outline: 2px solid #212529; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ink Link",
+      "kind": "button",
+      "refersTo": "nav-link",
+      "description": "Underlined text link with trailing arrow, 44px tall.",
+      "html": "<a class=\"ds-ink-link\" href=\"#\">Read his story <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a>",
+      "css": ".ds-ink-link { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 44px; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; font-weight: 500; color: #212529; text-decoration: underline; text-decoration-color: #adb5bd; text-decoration-thickness: 1px; text-underline-offset: 0.3em; } .ds-ink-link svg { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-ink-link:hover { text-decoration-color: #212529; } .ds-ink-link:hover svg { transform: translateX(3px); } .ds-ink-link:focus-visible { outline: 2px solid #212529; outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Labelled text field with hint.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-name\">Your name</label><input id=\"ds-name\" type=\"text\" placeholder=\"Full name\"><span class=\"ds-field-hint\">So we know who to reply to.</span></div>",
+      "css": ".ds-field { display: grid; gap: 0.5rem; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; } .ds-field label { font-weight: 600; color: #212529; } .ds-field input { width: 100%; min-height: 50px; padding: 0.75rem 0.9rem; border: 1px solid #adb5bd; border-radius: 3px; background: #f8f9fa; color: #212529; font: inherit; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-field input::placeholder { color: #495057; } .ds-field input:focus-visible { outline: 2px solid #212529; outline-offset: 1px; border-color: transparent; } .ds-field-hint { font-size: 0.9375rem; color: #495057; }"
+    },
+    {
+      "name": "Door",
+      "kind": "nav",
+      "refersTo": "door-give",
+      "description": "Bookcloth front door with a 16px radius, a title and 44px link rows; give in g900, study in g700.",
+      "html": "<nav class=\"ds-door\" aria-label=\"Give\"><p class=\"ds-door-title\">I'd like to give</p><ul><li><a href=\"#\">Give to the fund <span aria-hidden=\"true\">&#8594;</span></a></li><li><a href=\"#\">Dinner tickets <span aria-hidden=\"true\">&#8594;</span></a></li></ul></nav><nav class=\"ds-door ds-door-study\" aria-label=\"Study\"><p class=\"ds-door-title\">I'm a student</p><ul><li><a href=\"#\">Who qualifies <span aria-hidden=\"true\">&#8594;</span></a></li></ul></nav>",
+      "css": ".ds-door { display: inline-block; vertical-align: top; width: 260px; margin: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.25rem 0.75rem; border-radius: 16px; background-color: #212529; color: #f8f9fa; box-shadow: 0 14px 26px -18px rgb(33 37 41 / 0.5); font-family: Mukta, 'Segoe UI', system-ui, sans-serif; } .ds-door-study { background-color: #495057; } .ds-door-title { margin: 0; font-family: Montserrat, 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.1; } .ds-door ul { list-style: none; margin: 0.6rem 0 0; padding: 0; } .ds-door a { display: flex; align-items: center; justify-content: space-between; min-height: 44px; border-top: 1px solid rgb(248 249 250 / 0.18); color: #f8f9fa; font-weight: 500; text-decoration: none; } .ds-door li:first-child a { border-top: 0; } .ds-door a span { opacity: 0.7; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.3s; } .ds-door a:hover span { transform: translateX(3px); opacity: 1; } .ds-door a:focus-visible { outline: 2px solid #f8f9fa; outline-offset: 3px; }"
+    },
+    {
+      "name": "Print",
+      "kind": "custom",
+      "refersTo": "print-frame",
+      "description": "Unframed photograph with a 16px radius and a level pencil caption; no border, no resting shadow, no rotation. Settles flat when mounted.",
+      "html": "<figure class=\"ds-print\"><span class=\"ds-print-frame\"><span class=\"ds-print-img\"></span></span><figcaption class=\"ds-pencil\">Vargis Achen, as a young priest</figcaption></figure>",
+      "css": ".ds-print { margin: 1rem; width: 200px; } .ds-print-frame { position: relative; display: block; overflow: hidden; border-radius: 16px; background: #dee2e6; isolation: isolate; box-shadow: 0 0 0 transparent; transition: transform 1.1s cubic-bezier(0.19,1,0.22,1), box-shadow 1.1s cubic-bezier(0.19,1,0.22,1); } .ds-print-img { display: block; aspect-ratio: 4 / 5; background: linear-gradient(160deg, #adb5bd, #495057); } .ds-print:hover .ds-print-frame { transform: translateY(-12px) scale(1.025); box-shadow: 0 34px 46px -22px rgb(33 37 41 / 0.32), 0 8px 14px rgb(33 37 41 / 0.08); } .ds-pencil { display: block; margin-top: 0.85rem; font-family: Kalam, 'Segoe Print', 'Bradley Hand', cursive; font-weight: 300; font-size: 1.125rem; line-height: 1.3; color: #495057; } @media (prefers-reduced-motion: reduce) { .ds-print-frame { transition: none; } }"
+    },
+    {
+      "name": "Slot",
+      "kind": "custom",
+      "refersTo": "print-slot",
+      "description": "Empty space for a missing photograph: g200 fill, inset 1px g400 ring, 16px radius, Kalam initials in g600; never filled with stand-in imagery.",
+      "html": "<figure class=\"ds-slot\"><span class=\"ds-slot-frame\"><span class=\"ds-slot-initials\" aria-hidden=\"true\">TT</span></span><figcaption class=\"ds-slot-cap\">Dr. Toby Thomas</figcaption></figure>",
+      "css": ".ds-slot { margin: 1rem; width: 180px; } .ds-slot-frame { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 16px; background: #e9ecef; box-shadow: inset 0 0 0 1px #ced4da; } .ds-slot-initials { font-family: Kalam, 'Segoe Print', cursive; font-weight: 300; font-size: 2.5rem; color: #6c757d; } .ds-slot-cap { display: block; margin-top: 0.85rem; font-family: Kalam, 'Segoe Print', cursive; font-weight: 300; font-size: 1.25rem; color: #495057; }"
+    },
+    {
+      "name": "Tier Row",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Sponsorship tier written as a ruled register row, never a price card.",
+      "html": "<ul class=\"ds-tiers\"><li class=\"ds-tier\"><h3>Scholar Sponsor</h3><p class=\"ds-tier-price\">$4,000</p><p>A reserved table for eight, recognition on event signage, acknowledgment in the program, and recognition on our website.</p></li><li class=\"ds-tier\"><h3>Host a Table</h3><p class=\"ds-tier-price\">$2,400</p><p>A reserved table of eight for your family, friends or colleagues.</p></li></ul>",
+      "css": ".ds-tiers { list-style: none; margin: 0; padding: 0; border-top: 1px solid #ced4da; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; color: #343a40; } .ds-tier { display: grid; grid-template-columns: 13rem 7rem minmax(0, 1fr); gap: 0.25rem 2rem; align-items: baseline; padding-block: 1.4rem; border-bottom: 1px solid #dee2e6; } .ds-tier h3 { margin: 0; font-family: Montserrat, 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 1.375rem; color: #212529; } .ds-tier p { margin: 0; } .ds-tier-price { font-weight: 600; color: #212529; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Masthead Nav",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Wordmark, desktop links with 2px g600 current-page underline, compact cloth Donate.",
+      "html": "<header class=\"ds-mast\"><a class=\"ds-wordmark\" href=\"#\"><span>Fr. C.O. Vargis</span><small>Scholarship Fund</small></a><nav><a href=\"#\" aria-current=\"page\">Our story</a><a href=\"#\">For scholars</a><a href=\"#\">Events</a></nav><a class=\"ds-mast-donate\" href=\"#\">Donate</a></header>",
+      "css": ".ds-mast { display: flex; align-items: center; gap: 1.5rem; min-height: 76px; padding: 0 1.5rem; background: rgb(248 249 250 / 0.86); backdrop-filter: blur(14px); box-shadow: 0 1px 0 #dee2e6; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; } .ds-wordmark { display: inline-flex; flex-direction: column; margin-right: auto; color: #212529; text-decoration: none; line-height: 1; } .ds-wordmark span { font-family: Montserrat, 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 1.125rem; letter-spacing: -0.01em; } .ds-wordmark small { margin-top: 0.3rem; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #495057; } .ds-mast nav { display: flex; gap: 1.5rem; } .ds-mast nav a { display: inline-flex; align-items: center; min-height: 44px; color: #343a40; font-weight: 500; text-decoration: none; } .ds-mast nav a:hover { color: #212529; } .ds-mast nav a[aria-current='page'] { color: #212529; text-decoration: underline; text-decoration-color: #6c757d; text-decoration-thickness: 2px; text-underline-offset: 0.45em; } .ds-mast a:focus-visible { outline: 2px solid #212529; outline-offset: 3px; } .ds-mast-donate { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border-radius: 3px; background: #212529; color: #f8f9fa; font-weight: 600; text-decoration: none; } .ds-mast-donate:hover { background: #343a40; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Parish Album",
+    "overview": "The site is the parish's own family album. Each page is a light gray leaf; photographs are mounted on it unframed, square to the page with a soft 16px corner, and captioned underneath in pencil. The people Fr. Vargis raised are the proof, so the system's job is to present real photographs with the care of a kept album rather than the gloss of a campaign.\n\nEverything is drawn from nine neutral gray steps; photographs are the only source of color on any page. Depth is physical and quiet: a photograph lands flat on the leaf, bookcloth panels carry a woven texture, and a glassine interleaf lays over the page when the menu opens. Density is generous: wide leaves, a 12-column grid with asymmetric splits, nothing centered by default. One motion moment, mounting, gives the album its life; every other transition is a short state change.\n\nInformation that elsewhere would become cards, stat tiles or price boxes is written into the album as ruled register rows: hairline-separated lines of label and text, the way a parish ledger records it.",
+    "keyCharacteristics": [
+      "Nine-step neutral gray palette, nothing else; photographs keep their own color.",
+      "Montserrat Bold headings, Mukta text, Kalam pencil captions.",
+      "Unframed photographs with a soft 16px corner (client-pinned); an empty slot with initials where a photograph is missing.",
+      "Two bookcloth doors (give, study) in g900 and g700 with a woven texture.",
+      "Ruled register rows instead of cards.",
+      "One authored motion: mounting. Static under reduced motion."
+    ],
+    "rules": [
+      {
+        "name": "The Nine Grays Rule",
+        "body": "UI color comes only from the nine steps; translucency is allowed only as an alpha of g100 or g900 (glassine, cloth rules, shadows). Anything with a hue belongs to a photograph.",
+        "section": "colors"
+      },
+      {
+        "name": "The Large-Type Gray Rule",
+        "body": "g600 holds 3:1 on the leaf, not 4.5:1. It colors display and headline emphasis, 2rem+ initials, and decoration; never body copy, captions or controls.",
+        "section": "colors"
+      },
+      {
+        "name": "The Neutral Emphasis Rule",
+        "body": "Where a heading needs emphasis, the phrase steps down to g600 on light leaves and to g400 on cloth. Emphasis is a tonal step, never a hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Montserrat Bold Rule",
+        "body": "Every heading is Montserrat at weight 700 (client-pinned). Montserrat 600 is loaded only for the contact inbox addresses, which are links, not headings.",
+        "section": "typography"
+      },
+      {
+        "name": "The Pencil Rule",
+        "body": "Kalam is for writing about a thing (captions, notes, states), never for headings, controls or paragraphs.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Paper Rule",
+        "body": "All shadows are blurred and negatively spread, cast by paper and cloth on paper. Nothing casts a hard offset block.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Glassine Rule",
+        "body": "Anything that covers the page (menu, sticky masthead, lightbox backdrop) is translucent and blurred, never an opaque panel.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do take every UI color from g100 to g900; translucency only as alphas of g100 or g900.",
+      "Do set every heading in Montserrat 700.",
+      "Do keep g600 to large type and decoration; use g700 or darker for anything at body size.",
+      "Do mount photographs unframed, level, with the 16px radius and a pencil caption.",
+      "Do keep 16px for cards and photo containers and 3px for controls.",
+      "Do use an empty slot with initials where a person has no photograph.",
+      "Do write lists of facts, prices and dates as ruled register rows.",
+      "Do keep every interactive target at least 44px tall and show the 2px g900 focus outline.",
+      "Do make overlays glassine and make the page behind them inert.",
+      "Do keep mounting as the only orchestrated motion and make it static under reduced motion."
+    ],
+    "donts": [
+      "Don't introduce a hue for accents, states or emphasis; emphasis is a tonal step.",
+      "Don't use cards, stat tiles, impact counters or priced boxes; write the facts into the register.",
+      "Don't put a small tracked label above a heading.",
+      "Don't fill a missing photograph with stock, generated or placeholder imagery.",
+      "Don't set body copy, captions or controls in g600.",
+      "Don't use Kalam for headings, buttons or paragraphs.",
+      "Don't use hard offset shadows or opaque overlay panels.",
+      "Don't frame photographs: no border, mat, triangular tabs, resting shadow or rotation."
+    ]
+  }
+}

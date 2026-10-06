@@ -4,48 +4,33 @@
   "nav": "give",
   "scripts": ["https://donorbox.org/widget.js"]
 } -->
-<section class="page-hero" aria-labelledby="page-title">
-  <div class="wrap">
-    <p class="eyebrow" data-reveal>Donate</p>
-    <h1 id="page-title" class="display" data-reveal style="--i:1">Every dollar carries <span class="mark">his belief forward.</span></h1>
-    <p class="lead" data-reveal style="--i:2">Give securely by card, or send a gift by Venmo or Zelle. The Fund is a registered 501(c)(3); contributions are tax-deductible to the extent allowed by law.</p>
+<section class="folio folio--solo" aria-labelledby="page-title">
+  <div class="wrap grid12">
+    <div class="folio__text">
+      <h1 id="page-title" class="display">Every dollar carries <span class="accent">his belief forward.</span></h1>
+      <p class="lead">Give securely by card, or send a gift by Venmo or Zelle. The Fund is a registered 501(c)(3); contributions are tax-deductible to the extent allowed by law.</p>
+    </div>
   </div>
 </section>
 
-<section class="section section--flush-top" aria-label="Ways to give">
-  <div class="wrap donate-layout">
-    <div>
-      <div class="bezel donorbox-frame">
-        <div class="bezel__core">
-          <iframe src="https://donorbox.org/embed/end-generational-poverty" name="donorbox" title="Donation form, hosted by Donorbox" allow="payment" allowpaymentrequest scrolling="no" height="900" width="100%" style="max-width:500px; min-width:250px; max-height:none !important"></iframe>
+<section class="leaf" aria-label="Ways to give" style="padding-top:0">
+  <div class="wrap giving">
+    <div class="giving__form">
+      <div class="print">
+        <div class="print__frame">
+          <iframe src="https://donorbox.org/embed/end-generational-poverty" name="donorbox" title="Donation form, hosted by Donorbox" allow="payment" allowpaymentrequest scrolling="no" height="1380" width="430" style="max-width:100%; min-width:250px; max-height:none !important"></iframe>
         </div>
       </div>
-      <p class="note">Form not loading? <a href="https://donorbox.org/end-generational-poverty">Give on Donorbox directly</a>.</p>
+      <p class="small muted" style="margin-top:1.25rem">Form not loading? <a href="https://donorbox.org/end-generational-poverty">Give on Donorbox directly</a>.</p>
     </div>
 
-    <div class="donate-side">
-      <p class="eyebrow eyebrow--muted">Other ways to give</p>
-      <article class="bezel bezel--pad give-card">
-        <div class="bezel__core">
-          <h2 class="eyebrow eyebrow--muted">Venmo</h2>
-          <p class="give-card__value">@FrCOVargisFund</p>
-          <a class="link-arrow" href="https://venmo.com/FrCOVargisFund">Open in Venmo {{icon:external}}</a>
-        </div>
-      </article>
-      <article class="bezel bezel--pad give-card" id="zelle">
-        <div class="bezel__core">
-          <h2 class="eyebrow eyebrow--muted">Zelle</h2>
-          <p class="give-card__value give-card__value--sm">finance@frcovargisfund.org</p>
-          <button class="btn btn--light" type="button" data-copy="finance@frcovargisfund.org"><span class="btn__chip">{{icon:copy}}</span><span data-copy-label>Copy address</span></button>
-        </div>
-      </article>
-      <article class="bezel bezel--pad give-card">
-        <div class="bezel__core">
-          <h2 class="eyebrow eyebrow--muted">Sponsor the dinner</h2>
-          <p class="give-card__value give-card__value--sm">Tables from $2,400</p>
-          <a class="link-arrow" href="sips-for-scholarship.html#sponsor">See sponsorship {{icon:arrow}}</a>
-        </div>
-      </article>
+    <div class="giving__side">
+      <h2 class="h2">Other ways <span class="accent">to give.</span></h2>
+      <ul class="ways" role="list">
+        <li><span class="ways__name">Venmo</span><span class="ways__detail">@FrCOVargisFund</span><a class="ink-link" href="https://venmo.com/FrCOVargisFund">Open Venmo {{icon:external}}</a></li>
+        <li id="zelle"><span class="ways__name">Zelle</span><span class="ways__detail">finance@<wbr>frcovargisfund.org</span><button class="btn btn--paper btn--compact" type="button" data-copy="finance@frcovargisfund.org">{{icon:copy}} <span data-copy-label>Copy address</span></button></li>
+        <li><span class="ways__name">Sponsor the dinner</span><span class="ways__detail">Tables from $2,400</span><a class="ink-link" href="sips-for-scholarship.html#sponsor">See sponsorship {{icon:arrow}}</a></li>
+      </ul>
 
       <div class="faq">
         <details>

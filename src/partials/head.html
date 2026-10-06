@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 {{base}}
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>{{title}}</title>
 <meta name="description" content="{{description}}">
 <link rel="canonical" href="{{url}}">
@@ -14,16 +15,15 @@
 <meta property="og:url" content="{{url}}">
 <meta property="og:image" content="{{ogImage}}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#edebe1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#15140f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f8f9fa">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Kalam:wght@300;400&family=Montserrat:wght@600;700&family=Mukta:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script>
-  // Reveal animations hide content until main.js marks it visible.
-  // If main.js never runs, drop the hook so nothing stays hidden.
+  // Mounting motion starts prints lifted until main.js sets them down.
+  // If main.js never runs, drop the hook so nothing stays half-mounted.
   document.documentElement.classList.add("js");
   setTimeout(function () {
     if (!document.documentElement.classList.contains("reveal-on")) document.documentElement.classList.remove("js");

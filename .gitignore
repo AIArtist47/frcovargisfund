@@ -3,4 +3,9 @@ node_modules/
 .vercel/
 .env*
 .claude/settings.local.json
-.impeccable/
+.impeccable/hook.cache.json
+.impeccable/config.local.json
+.impeccable/review/
+.impeccable/questions/
+.impeccable/round-*.json
+.impeccable/brief-*.md
