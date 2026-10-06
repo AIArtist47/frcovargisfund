@@ -1,0 +1,83 @@
+<!-- page {
+  "title": "Contact · Fr. C.O. Vargis Scholarship Fund",
+  "description": "Questions, volunteering or a student we should know about? Write to the Fr. C.O. Vargis Scholarship Fund in Houston, Texas.",
+  "nav": "contact"
+} -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="wrap">
+    <p class="eyebrow" data-reveal>Contact</p>
+    <h1 id="page-title" class="display" data-reveal style="--i:1">We'd love to <span class="mark">hear from you.</span></h1>
+    <p class="lead" data-reveal style="--i:2">Questions, volunteering, or a student you think we should know about. Pick the inbox that fits, or send a note below.</p>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Email addresses">
+  <ul class="contact-cards" role="list">
+    <li class="bezel bezel--pad" data-reveal>
+      <div class="bezel__core">
+        <h2 class="eyebrow eyebrow--muted">General &amp; volunteering</h2>
+        <p>Questions about the Fund, partnerships, or helping at an event.</p>
+        <a class="email" href="mailto:president@frcovargisfund.org">president@frcovargisfund.org</a>
+      </div>
+    </li>
+    <li class="bezel bezel--pad" data-reveal style="--i:1">
+      <div class="bezel__core">
+        <h2 class="eyebrow eyebrow--muted">Scholarships &amp; sponsorship</h2>
+        <p>Applications, eligibility, and sponsoring or hosting a dinner table.</p>
+        <a class="email" href="mailto:scholarship@frcovargisfund.org">scholarship@frcovargisfund.org</a>
+      </div>
+    </li>
+    <li class="bezel bezel--pad" data-reveal style="--i:2">
+      <div class="bezel__core">
+        <h2 class="eyebrow eyebrow--muted">Gifts &amp; Zelle</h2>
+        <p>Questions about a donation, receipts, or giving by Zelle.</p>
+        <a class="email" href="mailto:finance@frcovargisfund.org">finance@frcovargisfund.org</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="section" aria-labelledby="form-title">
+  <div class="wrap split">
+    <div class="split__aside">
+      <h2 id="form-title" class="h2">Send <span class="mark">a note.</span></h2>
+      <p class="lead">This opens a ready-to-send email in your mail app, addressed to the right person.</p>
+      <dl class="fact-list">
+        <div><dt>Mailing address</dt><dd>13133 Old Richmond Rd.<br>Houston, TX 77099</dd></div>
+        <div><dt>Follow along</dt><dd><a href="https://www.facebook.com/FrCOVargisScholarshipFund">Facebook</a></dd></div>
+      </dl>
+    </div>
+    <form class="form" data-mailto-form novalidate>
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error" data-error="Please enter your name.">
+        <p class="field__error" id="name-error"></p>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error" data-error="Please enter an email address, like name@example.com.">
+        <p class="field__hint" id="email-hint">So we can reply to you.</p>
+        <p class="field__error" id="email-error"></p>
+      </div>
+      <div class="field">
+        <label for="topic">What is it about?</label>
+        <select id="topic" name="topic">
+          <option value="president@frcovargisfund.org">General question</option>
+          <option value="president@frcovargisfund.org">Volunteering</option>
+          <option value="scholarship@frcovargisfund.org">Scholarships</option>
+          <option value="scholarship@frcovargisfund.org">Sponsoring the dinner</option>
+          <option value="finance@frcovargisfund.org">A gift or receipt</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required aria-describedby="message-error" data-error="Please write a short message."></textarea>
+        <p class="field__error" id="message-error"></p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--dark" type="submit">Write the email <span class="btn__chip">{{icon:arrow}}</span></button>
+      </div>
+      <p class="form__status" role="status"></p>
+    </form>
+  </div>
+</section>

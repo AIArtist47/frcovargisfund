@@ -1,0 +1,13 @@
+{
+  "name": "frcovargisfund",
+  "private": true,
+  "type": "module",
+  "description": "Redesign of frcovargisfund.org: static site, no runtime dependencies.",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node serve.mjs"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}
