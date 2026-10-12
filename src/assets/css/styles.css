@@ -247,6 +247,8 @@ main:focus, [tabindex="-1"]:focus { outline: none; }
 .cloth h2, .cloth h3, .cloth strong { color: var(--cloth-ink); }
 .cloth .pencil { color: var(--cloth-ink); }
 .cloth .muted { color: var(--g300); }
+/* Lead text sets its own dark ink; on cloth it must read light (g100 on g700 is 8:1, on g900 15:1). */
+.cloth .lead { color: var(--cloth-ink); }
 .cloth a:not(.btn) { text-decoration-color: rgb(248 249 250 / 0.5); }
 .cloth .ink-link { color: var(--cloth-ink); }
 .cloth .accent { color: var(--cloth-accent); }
