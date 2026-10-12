@@ -575,23 +575,13 @@ html.menu-open { overflow: hidden; }
   text-decoration: underline; text-decoration-color: var(--g500); text-underline-offset: 0.3em;
 }
 .disclosure summary::-webkit-details-marker { display: none; }
-.disclosure .icon, .faq .icon { transition: transform 0.45s var(--ease-out); }
-.disclosure[open] .icon, .faq details[open] .icon { transform: rotate(45deg); }
+.disclosure .icon { transition: transform 0.45s var(--ease-out); }
+.disclosure[open] .icon { transform: rotate(45deg); }
 .disclosure p { margin-top: 0.4rem; font-size: var(--t-small); line-height: 1.65; }
 .disclosure p + p { margin-top: 0.75rem; }
 .disclosure .programme { margin-top: 1.25rem; font-size: var(--t-small); }
 .disclosure .programme > div { grid-template-columns: 9.5rem minmax(0, 1fr); padding-block: 0.6rem; }
 @media (max-width: 599px) { .disclosure .programme > div { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } }
-.faq { border-top: 1px solid var(--rule-strong); }
-.faq details { border-bottom: 1px solid var(--rule); }
-.faq summary {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  min-height: 44px; padding-block: 1.1rem; cursor: pointer; list-style: none;
-  font-family: var(--display); font-weight: 700; font-size: var(--t-h3); line-height: 1.3; letter-spacing: -0.01em; color: var(--pencil);
-}
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary .icon { flex: none; }
-.faq details > p { max-width: 62ch; padding-bottom: 1.25rem; }
 
 /* Rows: label + text, used for criteria, nights, missions */
 .rows { border-top: 1px solid var(--rule-strong); }
@@ -629,7 +619,6 @@ html.menu-open { overflow: hidden; }
 .giving__form .print { width: fit-content; max-width: 100%; }
 .giving__form .print__frame { background: var(--leaf); --rest: 0 0 0 1px var(--rule); }
 .giving__form iframe { margin-inline: auto; border: 0; }
-.giving__side .faq { margin-top: 3rem; }
 @media (max-width: 999px) { .giving { grid-template-columns: 1fr; } }
 
 /* Contact */
