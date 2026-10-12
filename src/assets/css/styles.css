@@ -677,7 +677,9 @@ html.menu-open { overflow: hidden; }
   mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 48%, transparent 96%);
 }
 .colophon__body { position: relative; margin-top: calc(-1 * clamp(3rem, 7vw, 6rem)); padding-bottom: 2rem; }
-/* Without the frieze (home): no art to rise over, so the footer starts on its own. */
+/* Without the frieze (home, our story): no art to rise over, so the footer starts on its own,
+   below the same full-width rule that separates two plain leaves. */
+.colophon--plain { border-top: 1px solid var(--rule); }
 .colophon--plain .colophon__body { margin-top: 0; padding-top: clamp(3rem, 6vw, 4.5rem); }
 .colophon--plain .colophon__grid { margin-top: 0; padding-top: 0; border-top: 0; }
 .colophon__sign { max-width: 46ch; }
