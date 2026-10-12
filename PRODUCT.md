@@ -74,10 +74,10 @@ education can lift an entire family out of poverty. Personal, not institutional.
 - Facts: more than 20 students sent to university; ten years of the dinner; Fr. Vargis earned seven
   degrees, the last a doctorate at 65; scholars' degrees include nursing, pharmacy and computer engineering;
   50+ years a priest, 20+ years vicar of St. Stephen's, founding vicar of Houston's first Orthodox parish.
-- Content: Fr. Vargis biography and degree list; eight board bios; three recorded interviews with
+- Content: Fr. Vargis biography and degree list; six board bios; three recorded interviews with
   Fr. Vargis; 2025 dinner recap video; ten gallery photographs; event details; giving channels.
 - Absent, never to be fabricated: scholar testimonials, scholar names or photos, financial reports or
-  amounts raised, an EIN, a phone number, headshots for Dr. Toby Thomas and Thomas Daniel, video captions.
+  amounts raised, an EIN, a phone number, a headshot for Dr. Toby Thomas, video captions.
 
 ## Product Principles
 
