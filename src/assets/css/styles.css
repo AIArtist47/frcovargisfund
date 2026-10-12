@@ -491,11 +491,6 @@ html.menu-open { overflow: hidden; }
 .film__play:active { transform: translateY(1px); }
 @media (hover: hover) { .film__play:hover { background: var(--g100); } }
 
-/* ---------- Statement: what a degree does ---------- */
-.statement__h { grid-column: 1 / span 8; font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.5rem); line-height: 1.16; text-wrap: balance; }
-.statement__marg { grid-column: 10 / span 3; align-self: end; }
-.statement__marg > * + * { margin-top: 0.85rem; }
-@media (max-width: 899px) { .statement__h, .statement__marg { grid-column: 1 / -1; } }
 
 /* ---------- Gatherings ---------- */
 .gatherings__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; }
@@ -682,6 +677,9 @@ html.menu-open { overflow: hidden; }
   mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 48%, transparent 96%);
 }
 .colophon__body { position: relative; margin-top: calc(-1 * clamp(3rem, 7vw, 6rem)); padding-bottom: 2rem; }
+/* Without the frieze (home): no art to rise over, so the footer starts on its own. */
+.colophon--plain .colophon__body { margin-top: 0; padding-top: clamp(3rem, 6vw, 4.5rem); }
+.colophon--plain .colophon__grid { margin-top: 0; padding-top: 0; border-top: 0; }
 .colophon__sign { max-width: 46ch; }
 .colophon__sign p:first-child { font-family: var(--display); font-weight: 700; font-size: clamp(1.625rem, 1.15rem + 2vw, 2.75rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--pencil); }
 .colophon__sign .pencil { margin-top: 1rem; color: var(--pencil-dim); }
