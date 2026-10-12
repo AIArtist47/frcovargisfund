@@ -37,7 +37,8 @@ education can lift an entire family out of poverty. Personal, not institutional.
   $275 per guest; Scholar Sponsor $4,000 and Host a Table $2,400 (tables of eight). Tickets via Stripe.
 - Casino Night ("High Rollers for Higher Education"), May 8, 2026, The Motorclub, Houston: past event.
 - Giving: Donorbox campaign `end-generational-poverty` (preferred), Venmo @FrCOVargisFund,
-  Zelle finance@frcovargisfund.org. Registered 501(c)(3).
+  Zelle finance@frcovargisfund.org. Registered 501(c)(3), but by client decision (2026-10-12) the
+  site states neither the 501(c)(3) status nor tax-deductibility in its copy or meta descriptions.
 - Applications open in windows; currently closed. Contact: scholarship@frcovargisfund.org.
 - Contacts: president@ (general, volunteering), scholarship@ (scholarships, sponsorship),
   finance@ (gifts, Zelle). Mailing address 13133 Old Richmond Rd., Houston, TX 77099. Facebook page.
