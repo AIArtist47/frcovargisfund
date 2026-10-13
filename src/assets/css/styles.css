@@ -577,7 +577,7 @@ html.menu-open { overflow: hidden; }
 .story__facts { grid-column: 1 / span 4; grid-row: 1; }
 .story__degrees { grid-column: 1 / span 4; grid-row: 2; align-self: start; padding-top: clamp(0.5rem, 1.5vw, 1rem); }
 .story__body { grid-row: 1 / span 3; }
-.story__intro { max-width: 34ch; margin-bottom: 0.9rem; font-size: var(--t-small); line-height: 1.5; color: var(--pencil-dim); }
+.story__intro { max-width: 24ch; margin-bottom: 1rem; font-family: var(--display); font-weight: 700; font-size: clamp(1.125rem, 1.02rem + 0.4vw, 1.3125rem); line-height: 1.3; letter-spacing: -0.01em; color: var(--pencil); text-wrap: balance; }
 .degrees--compact li { gap: 0.1rem 1rem; padding-block: 0.7rem; }
 .degrees--compact .degrees__school { font-size: 1rem; line-height: 1.25; letter-spacing: 0; }
 .degrees--compact .degrees__place { font-size: 0.875rem; }
