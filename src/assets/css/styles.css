@@ -716,15 +716,13 @@ html.menu-open { overflow: hidden; }
 @media (max-width: 599px) { .pair { grid-template-columns: 1fr; } .pair > :nth-child(2) { margin: 0 0 0 20%; } }
 
 /* Closing line used at the end of pages */
-.closing { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem; align-items: end; }
-.closing__line { grid-column: 1 / span 8; }
-.closing .actions { grid-column: 9 / span 4; justify-content: flex-end; }
-@media (max-width: 899px) { .closing__line, .closing .actions { grid-column: 1 / -1; justify-content: flex-start; } }
-/* Stacked: the action sits under its line, as on phones, instead of out at the right. */
-@media (min-width: 900px) {
-  .closing--stacked .closing__line, .closing--stacked .actions { grid-column: 1 / span 8; }
-  .closing--stacked .actions { justify-content: flex-start; margin-top: 0.5rem; }
-}
+/* A closing line with its action stacked beneath it, left-aligned with the text (client decision,
+   2026-10-13, on every page that closes this way). */
+.closing { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem; }
+.closing__line, .closing .actions { grid-column: 1 / span 8; }
+.closing .actions { justify-content: flex-start; }
+@media (min-width: 900px) { .closing .actions { margin-top: 0.5rem; } }
+@media (max-width: 899px) { .closing__line, .closing .actions { grid-column: 1 / -1; } }
 
 /* ---------- Colophon (footer) ---------- */
 .colophon { background: var(--leaf); border-top: 1px solid var(--rule); }
