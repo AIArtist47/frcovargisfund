@@ -193,12 +193,12 @@ A pinned, fully neutral scale: cool grays from paper (g100) to ink (g900), with 
 
 ### Hierarchy
 - **Display** (700, clamp 2.5 to 4.75rem, 1.08, -0.025em): one per page, the leaf's title; balanced wrapping.
-- **Headline** (700, clamp 1.875 to 3.125rem, 1.08, -0.025em): leaf headings; the colophon signature and menu names use the same face at their own sizes.
+- **Headline** (700, clamp 1.875 to 3.125rem, 1.08, -0.025em): leaf headings; menu names use the same face at their own size.
 - **Title** (700, clamp 1.25 to 1.75rem, 1.15, -0.015em): gathering entries, degree schools, board member names.
 - **Lead** (400, clamp 1.1875 to 1.4375rem, 1.5): the line under a display title, capped at 40ch; also long-form reading bodies.
 - **Body** (400, clamp 1.0625 to 1.1875rem, 1.62): running text, 62ch measure. Weight 600 for strong text and controls, 500 for links.
 - **Label** (400, 0.9375rem): dates, detail lines, hints; tabular figures for dates and prices.
-- **Pencil** (Kalam 300, clamp 1.0625 to 1.25rem, 1.3): print captions, margin notes, menu notes, the colophon line, entry states.
+- **Pencil** (Kalam 300, clamp 1.0625 to 1.25rem, 1.3): print captions, margin notes, menu notes, entry states.
 
 ### Named Rules
 **The Montserrat Bold Rule.** Every heading is Montserrat at weight 700 (client-pinned). The one exception is the site title, also client-pinned: "The Father C.O. Vargis / Scholarship Fund" in EB Garamond 400, uppercase, 26px, two lines, in the masthead, menu and colophon. It scales to clamp(14px, 3.9vw, 26px) only below 722px. Montserrat 600 is loaded only for the contact inbox addresses, which are links, not headings.
@@ -281,7 +281,7 @@ Ruled lists in the album's ledger voice. A g400 rule above, g300 hairlines betwe
 - **Notice strip:** a cloth band above the masthead for the next gathering, 44px tall, retiring itself after the date.
 
 ### Colophon
-The footer is a signed page: the Last Supper art band masked into the leaf top and bottom, a Montserrat signature line overlapping it with a pencil line beneath, then a ruled four-column grid of links (44px targets) and a base line. Every page except the 404 page (client decisions, 2026-10-12/13) sets `"frieze": false` in its page header: the build drops the blocks marked `<!-- frieze -->` in the footer partial (art band, signature, art credit) and adds `colophon--plain`, so the footer opens directly on the link grid below a full-width 1px rule.
+A plain footer on every page: a full-width g300 rule, then the four-column grid of links (44px targets: the site title and one-line description, Explore, Give, Contact), then a base line with the copyright. Block padding `clamp(3rem, 6vw, 4.5rem)` above, 2rem below. The Last Supper art band, its “Carry his belief forward.” signature, pencil line and art credit were removed from the whole site by client decisions (2026-10-12/13).
 
 ### Motion: Mounting
 The one authored moment. As a print enters the viewport (IntersectionObserver, 8% bottom margin), a photograph starts raised (translateY(-12px), 1.025 scale, the lifted shadow over its rest shadow) and settles flat (no transform, rest shadow only) over 1.1s on `cubic-bezier(0.19, 1, 0.22, 1)`, staggered 110ms per index; its caption then writes on left to right by clip-path over 1.2s. Prints are always visible; if script fails the hook is dropped after 2.5s. Under reduced motion every photograph is placed flat at rest and all transitions collapse. Smooth scrolling is Lenis (pinned 1.3.26, loaded with SRI), skipped under reduced motion.

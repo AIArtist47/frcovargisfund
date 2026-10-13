@@ -50,7 +50,7 @@ education can lift an entire family out of poverty. Personal, not institutional.
 - Page file names must stay (they match the old Weebly site): index, about-father-vargis, for-scholars,
   events, sips-for-scholarship, casino-night, board-of-directors, gallery, donate-now, contact;
   event-gallery redirects to events.html#recap.
-- Media is hot-linked from the Weebly host; the footer art comes from Unsplash.
+- Media is hot-linked from the Weebly host (board headshot of Thomas J. Daniel is served from the site).
 - No backend: the contact form composes an email in the visitor's mail app.
 - Dinner promotions expire automatically after November 6, 2026.
 - Lenis smooth scrolling must remain (confirmed).
@@ -60,8 +60,8 @@ education can lift an entire family out of poverty. Personal, not institutional.
 - Name: The Father C.O. Vargis Scholarship Fund (short: Fr. C.O. Vargis Scholarship Fund).
   Fr. Vargis is affectionately "Vargis Achen".
 - Binding assets (confirmed): the hero icon painting of Christ blessing the children (original site
-  banner), the Last Supper footer art (only on the 404 page; removed elsewhere by client decisions 2026-10-12/13), all existing
-  photography and video, all page URLs and content.
+  banner), all existing photography and video, all page URLs and content. The Last Supper footer art was
+  binding until the client removed it from every page (2026-10-12/13); the footer is now plain on all pages.
 - Voice: warm and plain; reverent without preaching; specific facts over slogans.
 - Palette (pinned by the client, 2026-10-06): the nine-step neutral gray scale #F8F9FA, #E9ECEF, #DEE2E6,
   #CED4DA, #ADB5BD, #6C757D, #495057, #343A40, #212529, and no other colors (photographs keep their own).

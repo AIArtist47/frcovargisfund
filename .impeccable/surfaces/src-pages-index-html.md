@@ -8,7 +8,7 @@ related_targets: []
 Scope: whole site (home + nine inner pages + 404), redesign. Visitor mode: Persuade.
 Audience: supporters (give, dinner, sponsor) and scholars (eligibility, application status), served equally.
 Proof: real photographs, real names, Achen's life, ten years of dinners, 20+ scholars. Nothing invented.
-Constraints: binding hero icon painting, binding Last Supper footer art, Lenis, all URLs and content.
+Constraints: binding hero icon painting, Lenis, all URLs and content (the Last Supper footer art was removed site-wide by client decision, 2026-10-13).
 
 ## Direction contract
 

@@ -76,14 +76,7 @@ export async function build() {
     const nav = meta.nav
       ? header.replaceAll(`data-nav="${meta.nav}"`, `data-nav="${meta.nav}" aria-current="page"`)
       : header;
-    // The Last Supper frieze at the top of the footer is marked with <!-- frieze --> comments;
-    // a page with "frieze": false drops those blocks and gets the plain footer.
-    const foot = meta.frieze === false
-      ? footer
-          .replace(/[ \t]*<!-- frieze -->[\s\S]*?<!-- \/frieze -->\n?/g, "")
-          .replace(`<footer class="colophon">`, `<footer class="colophon colophon--plain">`)
-      : footer.replace(/[ \t]*<!-- \/?frieze -->\n?/g, "");
-    const page = `${head}\n<body>\n${nav}\n<main id="main" tabindex="-1">\n${body}\n</main>\n${foot}\n</body>\n</html>\n`;
+    const page = `${head}\n<body>\n${nav}\n<main id="main" tabindex="-1">\n${body}\n</main>\n${footer}\n</body>\n</html>\n`;
     await writeFile(join(OUT, file), expand(page, vars));
   }
   return files.length;
