@@ -44,6 +44,61 @@
   document.querySelectorAll("[data-expires]").forEach((el) => {
     if (now > Date.parse(el.dataset.expires)) el.remove();
   });
+
+  /* ---------- Announcement strip ---------- */
+  // Shown on the home page on a visitor's first visit only, remembered per
+  // announcement (data-notice) so a future announcement shows again. It stays
+  // 8 seconds, paused while hovered, focused or in a background tab, then
+  // folds away; the close button or Escape folds it at once.
+  const notice = document.querySelector(".notice");
+  const onHome = Boolean(document.querySelector("[data-nav='home'][aria-current='page']"));
+  if (notice && onHome) {
+    const key = `notice-seen:${notice.dataset.notice || "announcement"}`;
+    let seen = false;
+    try { seen = localStorage.getItem(key) === "1"; } catch { /* storage blocked: treat as unseen */ }
+    if (!seen) {
+      let remaining = 8000;
+      let startedAt = 0;
+      let timer = 0;
+      let hovering = false;
+      let focused = false;
+      const close = () => {
+        clearTimeout(timer);
+        timer = 0;
+        const hadFocus = notice.contains(document.activeElement);
+        notice.classList.remove("is-open");
+        if (hadFocus) document.querySelector(".wordmark")?.focus();
+      };
+      const sync = () => {
+        if (!notice.classList.contains("is-open")) return;
+        const run = !hovering && !focused && document.visibilityState === "visible";
+        if (run && !timer) {
+          startedAt = Date.now();
+          timer = setTimeout(close, remaining);
+        } else if (!run && timer) {
+          clearTimeout(timer);
+          timer = 0;
+          remaining = Math.max(0, remaining - (Date.now() - startedAt));
+        }
+      };
+      notice.addEventListener("pointerenter", () => { hovering = true; sync(); });
+      notice.addEventListener("pointerleave", () => { hovering = false; sync(); });
+      notice.addEventListener("focusin", () => { focused = true; sync(); });
+      notice.addEventListener("focusout", (event) => {
+        if (!notice.contains(event.relatedTarget)) { focused = false; sync(); }
+      });
+      notice.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
+      document.addEventListener("visibilitychange", sync);
+      notice.querySelector(".notice__close")?.addEventListener("click", close);
+      // Opens on the first frame the visitor can see (a background tab waits),
+      // and only then counts as seen.
+      requestAnimationFrame(() => {
+        notice.classList.add("is-open");
+        try { localStorage.setItem(key, "1"); } catch { /* storage blocked: shows on this visit only */ }
+        sync();
+      });
+    }
+  }
   // Whole calendar days in Houston, so "In 31 days" means the same thing on
   // every clock: Oct 6 to Nov 6 is 31, whatever the hour.
   const houstonDay = (time) => {

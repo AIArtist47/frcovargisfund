@@ -89,7 +89,8 @@ education can lift an entire family out of poverty. Personal, not institutional.
 2. Personal over institutional: real people, real names and real photographs are the proof.
 3. Truth only: no invented numbers, quotes, testimonials or claims.
 4. Giving is effortless: Donate is reachable everywhere and every channel is spelled out.
-5. Time-aware: the next gathering surfaces itself, then retires itself.
+5. Time-aware: the next gathering surfaces itself, then retires itself. The announcement strip greets a visitor
+   once, on their first home-page visit, for 8 seconds, and can be closed (client decision, 2026-10-13).
 
 ## Accessibility & Inclusion
 

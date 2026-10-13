@@ -258,13 +258,30 @@ main:focus, [tabindex="-1"]:focus { outline: none; }
 .cloth .accent { color: var(--cloth-accent); }
 
 /* ---------- Notice strip ---------- */
-.notice { background-color: var(--give); background-image: var(--weave); color: var(--cloth-ink); font-size: 0.9375rem; }
+/* With script, the strip shows only on a visitor’s first home-page visit: it opens (is-open), stays
+   8 seconds (paused on hover, focus or a hidden tab) and folds away; the close button folds it at
+   once. Everywhere else it stays folded. Without script it simply shows. */
+.notice {
+  display: grid; grid-template-rows: 1fr;
+  background-color: var(--give); background-image: var(--weave); color: var(--cloth-ink); font-size: 0.9375rem;
+}
+.notice__inner { position: relative; min-height: 0; overflow: hidden; }
+.js .notice { grid-template-rows: 0fr; visibility: hidden; transition: grid-template-rows 0.5s var(--ease-out), visibility 0s linear 0.5s; }
+.js .notice.is-open { grid-template-rows: 1fr; visibility: visible; transition: grid-template-rows 0.5s var(--ease-out), visibility 0s; }
+@media (prefers-reduced-motion: reduce) { .js .notice, .js .notice.is-open { transition: none; } }
 .notice strong { font-weight: 600; color: var(--cloth-ink); }
 .notice a {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-  gap: 0.15rem 0.75rem; min-height: 44px; padding: 0.45rem var(--gutter);
+  gap: 0.15rem 0.75rem; min-height: 44px; padding: 0.45rem calc(var(--gutter) + 44px);
   text-decoration: none;
 }
+.notice__close {
+  position: absolute; top: 50%; right: max(0.25rem, var(--gutter) - 0.75rem); translate: 0 -50%;
+  display: grid; place-items: center; width: 44px; height: 44px; padding: 0;
+  border: 0; border-radius: 3px; background: none; color: var(--cloth-ink); cursor: pointer;
+  transition: background-color 0.3s var(--ease-out);
+}
+@media (hover: hover) { .notice__close:hover { background-color: rgb(248 249 250 / 0.12); } }
 .notice__go { display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: underline; text-decoration-color: rgb(248 249 250 / 0.5); text-underline-offset: 0.25em; }
 @media (max-width: 599px) { .notice__where { display: none; } }
 
