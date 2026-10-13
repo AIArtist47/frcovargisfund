@@ -684,6 +684,50 @@ html.menu-open { overflow: hidden; }
 .giving__form iframe { margin-inline: auto; border: 0; }
 @media (max-width: 999px) { .giving { grid-template-columns: 1fr; } }
 
+/* Blogs: posts as cards. Paper cards on the alternate leaf, zig-zagging 7/5 then 5/7 across the
+   grid. Media slots share one height so every row lines up. An empty card (post--empty) holds a
+   pencil note and text bars and is not a link, so it never looks clickable; a published card wraps
+   its content in .post__link and lifts on hover. */
+.posts { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); }
+.posts > li { grid-column: span 6; }
+@media (min-width: 900px) {
+  .posts > li:nth-child(4n + 1), .posts > li:nth-child(4n + 4) { grid-column: span 7; }
+  .posts > li:nth-child(4n + 2), .posts > li:nth-child(4n + 3) { grid-column: span 5; }
+}
+@media (max-width: 699px) { .posts > li { grid-column: 1 / -1; } }
+.post {
+  display: flex; flex-direction: column; height: 100%; overflow: hidden;
+  border-radius: var(--radius); background: var(--leaf);
+  box-shadow: 0 0 0 1px var(--rule-strong), 0 14px 28px -20px rgb(33 37 41 / 0.35);
+}
+.post__link { display: flex; flex-direction: column; flex: 1; color: inherit; text-decoration: none; }
+.post__link:focus-visible { outline-offset: -2px; border-radius: var(--radius); }
+.post__media { display: grid; place-items: center; height: clamp(200px, 22vw, 320px); background: var(--leaf-3); }
+.post__media img { width: 100%; height: 100%; object-fit: cover; }
+.post__media .pencil { color: var(--pencil-dim); }
+.post__body { display: flex; flex-direction: column; flex: 1; padding: 1.25rem 1.25rem 1rem; }
+.post__title { font-size: var(--t-h3); line-height: 1.2; text-wrap: balance; }
+.post__excerpt { margin-top: 0.5rem; font-size: var(--t-small); line-height: 1.6; color: var(--pencil-dim); }
+.post__lines { display: grid; gap: 0.6rem; }
+.post__lines span { display: block; height: 0.5rem; border-radius: 3px; background: var(--leaf-2); }
+.post__lines span:nth-child(-n + 2) { height: 0.9rem; }
+.post__lines span:nth-child(1) { width: 82%; }
+.post__lines span:nth-child(2) { width: 56%; margin-bottom: 0.4rem; }
+.post__lines span:nth-child(4) { width: 92%; }
+.post__lines span:nth-child(5) { width: 64%; }
+.post__meta {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem;
+  margin-top: auto; padding-top: 0.9rem; border-top: 1px solid var(--rule);
+  font-size: 0.875rem; color: var(--pencil-dim); font-variant-numeric: tabular-nums;
+}
+.post__body > :not(.post__meta) + .post__meta { margin-top: 1.25rem; }
+@media (hover: hover) {
+  .post:has(.post__link) { transition: box-shadow 0.4s var(--ease-out), translate 0.4s var(--ease-out); }
+  .post:has(.post__link:hover) { translate: 0 -3px; box-shadow: 0 0 0 1px var(--rule-strong), var(--shadow-lifted); }
+  .post__link:hover .post__title { text-decoration: underline; text-decoration-color: var(--g500); text-underline-offset: 0.2em; }
+}
+@media (max-width: 699px) { .post__media { height: auto; aspect-ratio: 16 / 10; } }
+
 /* Contact */
 .inboxes { border-top: 1px solid var(--rule-strong); }
 .inboxes li { display: grid; gap: 0.25rem 2rem; padding-block: 1.4rem; border-bottom: 1px solid var(--rule); }

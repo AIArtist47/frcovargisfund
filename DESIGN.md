@@ -270,6 +270,11 @@ Ruled lists in the album's ledger voice. A g400 rule above, g300 hairlines betwe
 - **Notes**: margin notes in pencil separated by a dashed rule.
 - **Degrees** (Our story): school in Montserrat 700, place beneath in small dim text, the degree in pencil at the right. Since 2026-10-13 (client request) they no longer have their own leaf: the compact variant (`degrees--compact`: 1rem school, 0.875rem place, 0.7rem row padding) sits in the biography’s margin under the notes, beside the paragraph that names the seven degrees, introduced by a small Montserrat 700 heading (h2, `clamp(1.125rem, 1.02rem + 0.4vw, 1.3125rem)`, 24ch, balanced, g900 with the g600 accent on “where Vargis Achen studied.”; enlarged 2026-10-13 at the client’s request) that the list is labelled by. The `.story` grid keeps facts and degrees in rows 1 and 2 of the margin while the story spans all rows; below 900px the order is facts, story, degrees.
 
+### Post card (Blogs)
+Paper cards (g100, 16px radius, g400 ring and a soft `0 14px 28px -20px` drop) on the alternate leaf, zig-zagging 7/5 then 5/7 columns from 900px, two per row from 700px, one below. A full-bleed media slot on top (g300, one shared height `clamp(200px, 22vw, 320px)` so rows align; 16:10 on phones), then the body (1.25rem padding): Montserrat title (`post__title`, t-h3) and a small dim excerpt, and a meta line pinned to the card foot under a g300 hairline: “Added <date>” left, “N reads” right, 0.875rem g700, tabular figures.
+- **Empty** (`post--empty`): the media slot carries a pencil “a story to come” (g700, 6.3:1) and five g200 text bars stand in for title and excerpt. Not a link and no hover, so it never looks clickable. Meta shows real values only.
+- **Published:** content wrapped in `a.post__link`; on hover the card rises 3px into the lifted shadow and the title underlines; focus draws the outline inside the card’s radius.
+
 ### Inputs / Fields
 - **Style:** g100 field, 1px g500 stroke, 3px corner, 50px minimum height; label above in Mukta 600 g900; hint in label size, g700.
 - **Focus:** stroke disappears and the 2px g900 outline takes over at 1px offset.

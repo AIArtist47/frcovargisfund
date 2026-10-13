@@ -49,7 +49,9 @@ education can lift an entire family out of poverty. Personal, not institutional.
 - Deployed on Vercel from GitHub `AIArtist47/frcovargisfund`; a push to `main` deploys production.
 - Page file names must stay (they match the old Weebly site): index, about-father-vargis, for-scholars,
   events, sips-for-scholarship, casino-night, board-of-directors, gallery, donate-now, contact;
-  event-gallery redirects to events.html#recap.
+  event-gallery redirects to events.html#recap. New since the redesign: blogs (2026-10-13), reached from the
+  menu and the footer; it holds empty post cards until posts are written. Dates and read counts on it must be
+  real (the placeholders show the date they were added and 0 reads); a read count needs a real source.
 - Media is hot-linked from the Weebly host (board headshot of Thomas J. Daniel is served from the site).
 - No backend: the contact form composes an email in the visitor's mail app.
 - Dinner promotions expire automatically after November 6, 2026.
