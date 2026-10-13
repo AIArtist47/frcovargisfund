@@ -68,6 +68,8 @@ education can lift an entire family out of poverty. Personal, not institutional.
 - Header typeface (pinned by the client, 2026-10-06): Montserrat Bold for all headings.
 - Site title (pinned by the client, 2026-10-06): "THE FATHER C.O. VARGIS SCHOLARSHIP FUND" in EB Garamond,
   regular weight, uppercase, 26px (scaled down only where a phone header cannot fit it).
+- Hero call to action (pinned by the client, 2026-10-13): one pill with two halves, Donate (to the Donate page)
+  and I’m a student (to For Scholars), in place of the two door panels.
 - Photographs and cards (pinned by the client, 2026-10-06): photographs unframed (no photo corners, borders
   or tilt) and a 16px corner radius on every card and photo container.
 

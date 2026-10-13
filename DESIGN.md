@@ -60,6 +60,7 @@ typography:
 rounded:
   sm: "3px"
   lg: "16px"
+  full: "999px"
 spacing:
   gutter: "clamp(1rem, 4.5vw, 3rem)"
   grid-gap: "clamp(1.25rem, 3vw, 2.5rem)"
@@ -94,16 +95,27 @@ components:
   button-compact:
     height: "44px"
     padding: "0.65rem 1rem 0.6rem"
-  door-give:
+  cta-pill:
+    backgroundColor: "{colors.g100}"
+    rounded: "{rounded.full}"
+    padding: "0.375rem"
+  cta-pill-give:
     backgroundColor: "{colors.g900}"
     textColor: "{colors.g100}"
-    rounded: "{rounded.lg}"
-    padding: "1.25rem 1.25rem 0.75rem"
-  door-study:
-    backgroundColor: "{colors.g700}"
-    textColor: "{colors.g100}"
-    rounded: "{rounded.lg}"
-    padding: "1.25rem 1.25rem 0.75rem"
+    typography: "{typography.body}"
+    rounded: "{rounded.full}"
+    padding: "0.7rem 1.35rem 0.65rem"
+    height: "48px"
+  cta-pill-give-hover:
+    backgroundColor: "{colors.g800}"
+  cta-pill-study:
+    textColor: "{colors.g900}"
+    typography: "{typography.body}"
+    rounded: "{rounded.full}"
+    padding: "0.7rem 1.35rem 0.65rem"
+    height: "48px"
+  cta-pill-study-hover:
+    backgroundColor: "{colors.g200}"
   print-frame:
     backgroundColor: "{colors.g300}"
     rounded: "{rounded.lg}"
@@ -141,7 +153,7 @@ Information that elsewhere would become cards, stat tiles or price boxes is writ
 - Nine-step neutral gray palette, nothing else; photographs keep their own color.
 - Montserrat Bold headings, Mukta text, Kalam pencil captions, and the site title in EB Garamond.
 - Unframed photographs with a soft 16px corner (client-pinned); an empty slot with initials where a photograph is missing.
-- Two bookcloth doors (give, study) in g900 and g700 with a woven texture.
+- One fully round hero pill (client decision, 2026-10-13): a bookcloth Donate half in g900 beside a paper "I'm a student" half.
 - Ruled register rows instead of cards.
 - One authored motion: mounting. Static under reduced motion.
 
@@ -150,10 +162,10 @@ Information that elsewhere would become cards, stat tiles or price boxes is writ
 A pinned, fully neutral scale: cool grays from paper (g100) to ink (g900), with tone and texture doing the work color usually does.
 
 ### Primary
-- **Bookcloth Black** (g900): the give door, the primary Donate button, the dinner notice strip, all headings and pencil-accent captions, focus rings, form error state. The darkest step is the fund's voice.
+- **Bookcloth Black** (g900): the Donate half of the hero pill, the primary Donate button, the dinner notice strip, all headings and pencil-accent captions, focus rings, form error state. The darkest step is the fund's voice.
 
 ### Secondary
-- **Bookcloth Slate** (g700): the study door and study-cloth leaves, the default pencil caption color on light leaves, dim supporting text (`--pencil-dim`).
+- **Bookcloth Slate** (g700): study-cloth leaves and the study facing page, the default pencil caption color on light leaves, dim supporting text (`--pencil-dim`).
 
 ### Neutral
 - **Album Leaf** (g100): page ground, the Donorbox container, paper buttons, form fields, text on cloth.
@@ -182,7 +194,7 @@ A pinned, fully neutral scale: cool grays from paper (g100) to ink (g900), with 
 ### Hierarchy
 - **Display** (700, clamp 2.5 to 4.75rem, 1.08, -0.025em): one per page, the leaf's title; balanced wrapping.
 - **Headline** (700, clamp 1.875 to 3.125rem, 1.08, -0.025em): leaf headings; the colophon signature and menu names use the same face at their own sizes.
-- **Title** (700, clamp 1.25 to 1.75rem, 1.15, -0.015em): door titles, gathering entries, degree schools, board member names.
+- **Title** (700, clamp 1.25 to 1.75rem, 1.15, -0.015em): gathering entries, degree schools, board member names.
 - **Lead** (400, clamp 1.1875 to 1.4375rem, 1.5): the line under a display title, capped at 40ch; also long-form reading bodies.
 - **Body** (400, clamp 1.0625 to 1.1875rem, 1.62): running text, 62ch measure. Weight 600 for strong text and controls, 500 for links.
 - **Label** (400, 0.9375rem): dates, detail lines, hints; tabular figures for dates and prices.
@@ -201,9 +213,9 @@ Prints in groups are deliberately unaligned: the family register staggers every 
 
 **Home frontispiece.** At 900px and up the icon painting fills the right 64% of the hero, masked into the leaf at its left and bottom, and ends above the hero edge so the caption sits on plain paper; the young Vargis print (max 240px) is mounted over the fade at columns 9 to 11. The copy takes the left six columns. Below 900px the painting becomes a full-width art band (62vw, max 460px) fading at its bottom, and the print shrinks to a 104px mounted print pinned top-right over the band with its caption set beside it, right-aligned.
 
-**Doors.** The two doors sit side by side in a two-column grid (max 560px) and stack to one column below 480px.
+**Hero pill.** The two front actions sit in one inline pill under the frontispiece lead (margin-top `clamp(2rem, 4vw, 2.75rem)`), never wrapping; below 380px its halves tighten to 0.95rem inline padding.
 
-**Breakpoints observed:** 480px (doors, board rows), 600px (menu label, album 2 columns, pairs), 700px (entries, rows), 800px (tiers, inboxes), 900px (main two-column collapse), 1000px (desktop nav, album 3 columns, donate split).
+**Breakpoints observed:** 380px (hero pill padding), 480px (masthead gap, board rows), 600px (menu label, album 2 columns, pairs), 700px (entries, rows), 800px (tiers, inboxes), 900px (main two-column collapse), 1000px (desktop nav, album 3 columns, donate split).
 
 ## Elevation & Depth
 
@@ -212,7 +224,8 @@ Depth is physical, not interface chrome. The leaf carries a fixed fibrous paper 
 ### Shadow Vocabulary
 - **Rest** (`--rest`, per container): none on a photograph (`0 0 0 transparent`); an inset 1px g400 ring on an empty slot; a 1px g300 outer ring on the Donorbox container. Mounting composes over it and settles back to it.
 - **Lifted** (`0 34px 46px -22px rgb(33 37 41 / 0.32), 0 8px 14px rgb(33 37 41 / 0.08)`): a photograph before it lands; the lightbox image.
-- **Cloth drop** (`0 14px 26px -18px rgb(33 37 41 / 0.5)` on doors; `0 8px 18px -10px rgb(33 37 41 / 0.45)` on cloth buttons): bookcloth lying on the leaf.
+- **Cloth drop** (`0 8px 18px -10px rgb(33 37 41 / 0.45)` on cloth buttons; `0 6px 14px -8px rgb(33 37 41 / 0.5)` on the pill's Donate half): bookcloth lying on the leaf.
+- **Pill float** (`0 0 0 1px g300, 0 14px 30px -18px rgb(33 37 41 / 0.45)`): the hero pill's hairline ring and soft drop.
 
 ### Named Rules
 **The Soft Paper Rule.** All shadows are blurred and negatively spread, cast by paper and cloth on paper. Nothing casts a hard offset block.
@@ -221,7 +234,7 @@ Depth is physical, not interface chrome. The leaf carries a fixed fibrous paper 
 
 ## Shapes
 
-Two radii. Cards and photo containers take one 16px radius (`--radius`, client-pinned 2026-10-06): every print frame and empty slot, the two doors, the lightbox image and the Donorbox container; video is clipped to it by the print frame. Controls stay near-square at 3px: buttons, the film play button, form fields, menu buttons and the skip link. Photographs are unframed: no border, mat, triangular tabs or rotation, and captions sit level beneath them. Rules are 1px hairlines; margin notes use a dashed g400 rule. Criteria lists are marked with a short 1px dash, not a bullet glyph.
+Two radii and one exception. Cards and photo containers take one 16px radius (`--radius`, client-pinned 2026-10-06): every print frame and empty slot, the lightbox image and the Donorbox container; video is clipped to it by the print frame. Controls stay near-square at 3px: buttons, the film play button, form fields, menu buttons and the skip link. The single exception is the home hero pill, fully round at 999px (container, both halves and their focus outline; client decision, 2026-10-13); no other control takes it. Photographs are unframed: no border, mat, triangular tabs or rotation, and captions sit level beneath them. Rules are 1px hairlines; margin notes use a dashed g400 rule. Criteria lists are marked with a short 1px dash, not a bullet glyph.
 
 ## Components
 
@@ -234,8 +247,11 @@ Bookcloth and paper: tactile, quiet, never shouting.
 - **Hover / Focus:** cloth lifts one step (g800); paper goes to g200; the trailing arrow icon slides 3px. Press sinks 1px. Focus is the global 2px g900 outline at 3px offset, switched to g100 inside cloth and the notice strip so it never disappears on a dark ground.
 - **Ink link:** underlined text link (g500 underline, 0.3em offset) with a trailing arrow, 44px tall; underline darkens to g900 on hover (on cloth: g100 text, half-opacity g100 underline that turns solid). `ink-link--button` gives a `<button>` the same look, for actions that must not compete with a page’s primary button (Copy address).
 
-### Doors
-The two front doors, give and study, made as bookcloth panels. Give is g900, study is g700; both weave-textured with a 16px radius and cloth drop. A Montserrat title, then 44px link rows separated by translucent g100 hairlines, each ending in an arrow that brightens and slides on hover.
+### Hero pill
+The home page's two front actions in one pill (`nav.cta-pill`, "Start here"; client decision, 2026-10-13). The container is inline-flex with a 0.25rem gap and 0.375rem padding, fully round (999px), glassine g100 at 88% with a 10px blur, a 1px g300 ring and a soft 0 14px 30px -18px drop. Two 48px links inside, Mukta 600, no wrapping, padding 0.7rem 1.35rem 0.65rem, each 999px round with a trailing arrow:
+- **Donate** (give half, to donate-now): g900 bookcloth with the weave, g100 text, an inset 8% g100 ring and a small cloth drop; hover lifts to g800.
+- **I'm a student** (study half, to for-scholars): transparent on the pill, g900 text; hover g200.
+- **Hover / Press / Focus:** the arrow slides 3px; press sinks 1px; the focus outline keeps the pill radius. Below 380px the halves tighten to 0.95rem inline padding.
 
 ### Spread (facing pages)
 The home page’s two doors in full: two equal bookcloth pages (give g900, study g700) meeting at a spine, where the study page takes a 3.5rem g900 shade and the give page a 1px g100 edge at 7%. Outside edges align to the page wrap (`max(gutter, (100cqw - wrap-max) / 2)` via a container query unit); the inner gutter either side of the spine is `clamp(2rem, 4vw, 4.5rem)`; block padding `clamp(4rem, 2.5rem + 6vw, 7.5rem)`. Both pages share five subgrid rows (title, lead, note, actions, list) so headings bottom-align and notes, buttons and lists sit on common lines. Hierarchy per page: Montserrat h2, a 46ch lead, a Kalam note (“Give by card…” / “Applications are closed…”), exactly one paper button (Give online / Who qualifies) with at most an ink link beside it, then the quieter list (ways, or dash-marked criteria) under a g400 rule. Below 900px the pages stack and the rows flow in the same order.
@@ -276,7 +292,7 @@ The one authored moment. As a print enters the viewport (IntersectionObserver, 8
 - **Do** set every heading in Montserrat 700.
 - **Do** keep g600 to large type and decoration; use g700 or darker for anything at body size.
 - **Do** mount photographs unframed, level, with the 16px radius and a pencil caption.
-- **Do** keep 16px for cards and photo containers and 3px for controls.
+- **Do** keep 16px for cards and photo containers and 3px for controls; the 999px hero pill is the only fully round shape.
 - **Do** use an empty slot with initials where a person has no photograph.
 - **Do** write lists of facts, prices and dates as ruled register rows.
 - **Do** keep every interactive target at least 44px tall and show the 2px g900 focus outline.

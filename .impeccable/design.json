@@ -189,7 +189,7 @@
       {
         "name": "--give",
         "value": "var(--g900)",
-        "purpose": "Give door and give cloth."
+        "purpose": "Donate half of the hero pill and give cloth."
       },
       {
         "name": "--give-lift",
@@ -199,7 +199,7 @@
       {
         "name": "--study",
         "value": "var(--g700)",
-        "purpose": "Study door and study cloth."
+        "purpose": "Study cloth and the study facing page."
       },
       {
         "name": "--study-lift",
@@ -229,7 +229,7 @@
       {
         "name": "--radius",
         "value": "16px",
-        "purpose": "One corner for every card and photo container (pinned by the client): prints, slots, doors, lightbox image, Donorbox container. Controls stay at 3px."
+        "purpose": "One corner for every card and photo container (pinned by the client): prints, slots, lightbox image, Donorbox container. Controls stay at 3px; the hero pill alone is 999px."
       },
       {
         "name": "--rest",
@@ -248,7 +248,7 @@
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Door titles, gathering entries, degree schools, board member names."
+        "purpose": "Gathering entries, degree schools, board member names."
       },
       "lead": {
         "displayName": "Lead",
@@ -274,9 +274,14 @@
         "purpose": "A photograph before it lands; the lightbox image. There is no resting print shadow: photographs sit flat on the leaf."
       },
       {
-        "name": "door",
-        "value": "0 14px 26px -18px rgb(33 37 41 / 0.5)",
-        "purpose": "Bookcloth doors lying on the leaf."
+        "name": "pill",
+        "value": "0 0 0 1px #dee2e6, 0 14px 30px -18px rgb(33 37 41 / 0.45)",
+        "purpose": "Hero pill: hairline ring and soft drop on the leaf."
+      },
+      {
+        "name": "pill-give",
+        "value": "inset 0 0 0 1px rgb(248 249 250 / 0.08), 0 6px 14px -8px rgb(33 37 41 / 0.5)",
+        "purpose": "Bookcloth Donate half of the hero pill."
       },
       {
         "name": "cloth-button",
@@ -318,7 +323,11 @@
     ],
     "breakpoints": [
       {
-        "name": "doors-stack",
+        "name": "pill-compact",
+        "value": "380px"
+      },
+      {
+        "name": "xs",
         "value": "480px"
       },
       {
@@ -351,7 +360,7 @@
       {
         "name": "weave",
         "value": "two SVG fractalNoise layers (0.018 x 0.9 and 0.9 x 0.018)",
-        "purpose": "Bookcloth on doors, cloth buttons, cloth leaves, notice strip."
+        "purpose": "Bookcloth on the hero pill Donate half, cloth buttons, cloth leaves, notice strip."
       }
     ],
     "accessibility": [
@@ -418,12 +427,12 @@
       "css": ".ds-field { display: grid; gap: 0.5rem; font-family: Mukta, 'Segoe UI', system-ui, sans-serif; } .ds-field label { font-weight: 600; color: #212529; } .ds-field input { width: 100%; min-height: 50px; padding: 0.75rem 0.9rem; border: 1px solid #adb5bd; border-radius: 3px; background: #f8f9fa; color: #212529; font: inherit; transition: border-color 0.3s cubic-bezier(0.16,1,0.3,1); } .ds-field input::placeholder { color: #495057; } .ds-field input:focus-visible { outline: 2px solid #212529; outline-offset: 1px; border-color: transparent; } .ds-field-hint { font-size: 0.9375rem; color: #495057; }"
     },
     {
-      "name": "Door",
+      "name": "Hero pill",
       "kind": "nav",
-      "refersTo": "door-give",
-      "description": "Bookcloth front door with a 16px radius, a title and 44px link rows; give in g900, study in g700.",
-      "html": "<nav class=\"ds-door\" aria-label=\"Give\"><p class=\"ds-door-title\">I'd like to give</p><ul><li><a href=\"#\">Give to the fund <span aria-hidden=\"true\">&#8594;</span></a></li><li><a href=\"#\">Dinner tickets <span aria-hidden=\"true\">&#8594;</span></a></li></ul></nav><nav class=\"ds-door ds-door-study\" aria-label=\"Study\"><p class=\"ds-door-title\">I'm a student</p><ul><li><a href=\"#\">Who qualifies <span aria-hidden=\"true\">&#8594;</span></a></li></ul></nav>",
-      "css": ".ds-door { display: inline-block; vertical-align: top; width: 260px; margin: 0 0.75rem 0.75rem 0; padding: 1.25rem 1.25rem 0.75rem; border-radius: 16px; background-color: #212529; color: #f8f9fa; box-shadow: 0 14px 26px -18px rgb(33 37 41 / 0.5); font-family: Mukta, 'Segoe UI', system-ui, sans-serif; } .ds-door-study { background-color: #495057; } .ds-door-title { margin: 0; font-family: Montserrat, 'Segoe UI', system-ui, sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; line-height: 1.1; } .ds-door ul { list-style: none; margin: 0.6rem 0 0; padding: 0; } .ds-door a { display: flex; align-items: center; justify-content: space-between; min-height: 44px; border-top: 1px solid rgb(248 249 250 / 0.18); color: #f8f9fa; font-weight: 500; text-decoration: none; } .ds-door li:first-child a { border-top: 0; } .ds-door a span { opacity: 0.7; transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.3s; } .ds-door a:hover span { transform: translateX(3px); opacity: 1; } .ds-door a:focus-visible { outline: 2px solid #f8f9fa; outline-offset: 3px; }"
+      "refersTo": "cta-pill",
+      "description": "The home hero's two front actions in one fully round (999px) pill, the single exception to the 3px control radius (client decision, 2026-10-13): a g900 bookcloth Donate half and a transparent I'm a student half.",
+      "html": "<nav class=\"ds-cta-pill\" aria-label=\"Start here\"><a class=\"ds-cta-pill-give\" href=\"#\">Donate <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a><a class=\"ds-cta-pill-study\" href=\"#\">I'm a student <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a></nav>",
+      "css": ".ds-cta-pill { display: inline-flex; align-items: center; gap: 0.25rem; max-width: 100%; padding: 0.375rem; border-radius: 999px; background: rgb(248 249 250 / 0.88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 0 0 1px #dee2e6, 0 14px 30px -18px rgb(33 37 41 / 0.45); font-family: Mukta, 'Segoe UI', system-ui, sans-serif; } .ds-cta-pill a { display: inline-flex; align-items: center; gap: 0.55rem; min-height: 48px; padding: 0.7rem 1.35rem 0.65rem; border-radius: 999px; font-size: 1rem; font-weight: 600; line-height: 1.1; letter-spacing: 0.01em; white-space: nowrap; text-decoration: none; color: #212529; transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1); } .ds-cta-pill svg { transition: transform 0.45s cubic-bezier(0.16,1,0.3,1); } .ds-cta-pill .ds-cta-pill-give { background-color: #212529; color: #f8f9fa; box-shadow: inset 0 0 0 1px rgb(248 249 250 / 0.08), 0 6px 14px -8px rgb(33 37 41 / 0.5); } .ds-cta-pill .ds-cta-pill-give:hover { background-color: #343a40; } .ds-cta-pill-study:hover { background-color: #e9ecef; } .ds-cta-pill a:hover svg { transform: translateX(3px); } .ds-cta-pill a:active { transform: translateY(1px); } .ds-cta-pill a:focus-visible { outline: 2px solid #212529; outline-offset: 3px; border-radius: 999px; } @media (max-width: 379px) { .ds-cta-pill a { padding-inline: 0.95rem; gap: 0.4rem; } }"
     },
     {
       "name": "Print",
@@ -465,7 +474,7 @@
       "Nine-step neutral gray palette, nothing else; photographs keep their own color.",
       "Montserrat Bold headings, Mukta text, Kalam pencil captions.",
       "Unframed photographs with a soft 16px corner (client-pinned); an empty slot with initials where a photograph is missing.",
-      "Two bookcloth doors (give, study) in g900 and g700 with a woven texture.",
+      "One fully round hero pill (client decision, 2026-10-13): a bookcloth Donate half in g900 beside a paper I'm a student half.",
       "Ruled register rows instead of cards.",
       "One authored motion: mounting. Static under reduced motion."
     ],
@@ -511,7 +520,7 @@
       "Do set every heading in Montserrat 700.",
       "Do keep g600 to large type and decoration; use g700 or darker for anything at body size.",
       "Do mount photographs unframed, level, with the 16px radius and a pencil caption.",
-      "Do keep 16px for cards and photo containers and 3px for controls.",
+      "Do keep 16px for cards and photo containers and 3px for controls; the 999px hero pill is the only fully round shape.",
       "Do use an empty slot with initials where a person has no photograph.",
       "Do write lists of facts, prices and dates as ruled register rows.",
       "Do keep every interactive target at least 44px tall and show the 2px g900 focus outline.",
