@@ -60,7 +60,7 @@ education can lift an entire family out of poverty. Personal, not institutional.
 - Name: The Father C.O. Vargis Scholarship Fund (short: Fr. C.O. Vargis Scholarship Fund).
   Fr. Vargis is affectionately "Vargis Achen".
 - Binding assets (confirmed): the hero icon painting of Christ blessing the children (original site
-  banner), the Last Supper footer art (only on Events, Sips for Scholarship and 404; removed elsewhere by client decisions 2026-10-12/13), all existing
+  banner), the Last Supper footer art (only on Sips for Scholarship and 404; removed elsewhere by client decisions 2026-10-12/13), all existing
   photography and video, all page URLs and content.
 - Voice: warm and plain; reverent without preaching; specific facts over slogans.
 - Palette (pinned by the client, 2026-10-06): the nine-step neutral gray scale #F8F9FA, #E9ECEF, #DEE2E6,
