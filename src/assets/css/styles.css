@@ -703,6 +703,11 @@ html.menu-open { overflow: hidden; }
 .closing__line { grid-column: 1 / span 8; }
 .closing .actions { grid-column: 9 / span 4; justify-content: flex-end; }
 @media (max-width: 899px) { .closing__line, .closing .actions { grid-column: 1 / -1; justify-content: flex-start; } }
+/* Stacked: the action sits under its line, as on phones, instead of out at the right. */
+@media (min-width: 900px) {
+  .closing--stacked .closing__line, .closing--stacked .actions { grid-column: 1 / span 8; }
+  .closing--stacked .actions { justify-content: flex-start; margin-top: 0.5rem; }
+}
 
 /* ---------- Colophon (footer) ---------- */
 .colophon { background: var(--leaf); border-top: 1px solid var(--rule); }
