@@ -367,6 +367,16 @@ html.menu-open { overflow: hidden; }
   mask-image: linear-gradient(to right, transparent 0, #000 42%), linear-gradient(to top, transparent 0, #000 14%);
   mask-composite: intersect;
 }
+/* A soft paper wash under the title: above the painting, below the copy. It keeps the end of
+   the title off the painting (about 47% opaque there before) and eases out by two-thirds
+   across, so the painting still reads in full on the right. Desktop only: on phones the
+   painting is a band above the copy and never sits behind it. */
+.frontis::after {
+  content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none;
+  background: linear-gradient(95deg,
+    rgb(248 249 250 / 0.9) 0%, rgb(248 249 250 / 0.9) 40%,
+    rgb(248 249 250 / 0.72) 50%, rgb(248 249 250 / 0.36) 58%, rgb(248 249 250 / 0) 68%);
+}
 .frontis__grid { min-height: clamp(540px, 78dvh, 760px); align-items: center; padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem); }
 .frontis__copy { grid-column: 1 / span 6; }
 .frontis__copy .lead { margin-top: 1.5rem; }
@@ -397,6 +407,7 @@ html.menu-open { overflow: hidden; }
 @media (max-width: 379px) { .cta-pill a { padding-inline: 0.95rem; gap: 0.4rem; } }
 
 @media (max-width: 899px) {
+  .frontis::after { display: none; }
   .frontis__art { position: relative; inset: auto; width: 100%; height: 62vw; max-height: 460px; z-index: 0; }
   .frontis__art img {
     -webkit-mask-image: linear-gradient(to top, transparent 0, #000 24%);
