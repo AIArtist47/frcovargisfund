@@ -570,6 +570,24 @@ html.menu-open { overflow: hidden; }
 .degrees__place { grid-column: 1; font-size: var(--t-small); color: var(--pencil-dim); }
 .degrees__deg { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
 
+/* Our story: one leaf. The margin carries the facts and, beneath them, the seven degrees as a
+   compact ledger beside the paragraph that names them; the story runs down the right. On
+   phones the order is facts, story, then degrees, so the list follows the narrative. */
+.story { grid-template-rows: auto auto 1fr; }
+.story__facts { grid-column: 1 / span 4; grid-row: 1; }
+.story__degrees { grid-column: 1 / span 4; grid-row: 2; align-self: start; padding-top: clamp(0.5rem, 1.5vw, 1rem); }
+.story__body { grid-row: 1 / span 3; }
+.story__intro { max-width: 34ch; margin-bottom: 0.9rem; font-size: var(--t-small); line-height: 1.5; color: var(--pencil-dim); }
+.degrees--compact li { gap: 0.1rem 1rem; padding-block: 0.7rem; }
+.degrees--compact .degrees__school { font-size: 1rem; line-height: 1.25; letter-spacing: 0; }
+.degrees--compact .degrees__place { font-size: 0.875rem; }
+@media (max-width: 899px) {
+  .story { grid-template-rows: none; }
+  .story__facts, .story__degrees, .story__body { grid-column: 1 / -1; grid-row: auto; }
+  .story__body { order: 2; }
+  .story__degrees { order: 3; padding-top: clamp(1.5rem, 6vw, 2.5rem); }
+}
+
 /* Films (recorded interviews) */
 .films { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 2.5rem); }
 .films > li:nth-child(1) { grid-column: 1 / span 7; }
