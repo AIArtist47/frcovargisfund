@@ -229,7 +229,7 @@
       {
         "name": "--radius",
         "value": "16px",
-        "purpose": "One corner for every card and photo container (pinned by the client): prints, slots, doors, status note, lightbox image, Donorbox container. Controls stay at 3px."
+        "purpose": "One corner for every card and photo container (pinned by the client): prints, slots, doors, lightbox image, Donorbox container. Controls stay at 3px."
       },
       {
         "name": "--rest",

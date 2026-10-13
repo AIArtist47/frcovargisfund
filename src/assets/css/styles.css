@@ -56,6 +56,7 @@
   --t-pencil: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
 
   --gutter: clamp(1rem, 4.5vw, 3rem);
+  --wrap-max: 1280px;
   --leaf-y: clamp(4.5rem, 3rem + 7vw, 9.5rem);
   --ease-settle: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -110,6 +111,7 @@ a:hover { text-decoration-color: var(--g900); }
 
 ::selection { background: var(--g800); color: var(--g100); }
 :focus-visible { outline: 2px solid var(--g900); outline-offset: 3px; border-radius: 2px; }
+.cloth :focus-visible, .notice :focus-visible { outline-color: var(--g100); }
 main:focus, [tabindex="-1"]:focus { outline: none; }
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: var(--leaf); }
@@ -128,7 +130,7 @@ main:focus, [tabindex="-1"]:focus { outline: none; }
 .skip:focus { transform: none; }
 
 /* ---------- Layout ---------- */
-.wrap { width: min(100% - 2 * var(--gutter), 1280px); margin-inline: auto; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--wrap-max)); margin-inline: auto; }
 .leaf { padding-block: var(--leaf-y); }
 .leaf--alt { background: var(--leaf-2); }
 .leaf + .leaf:not(.leaf--alt):not(.cloth) { border-top: 1px solid var(--rule); }
@@ -201,6 +203,7 @@ main:focus, [tabindex="-1"]:focus { outline: none; }
   text-underline-offset: 0.3em;
 }
 .ink-link .icon { transition: transform 0.45s var(--ease-out); }
+.ink-link--button { padding: 0; border: 0; background: none; font: inherit; font-weight: 500; cursor: pointer; }
 @media (hover: hover) { .ink-link:hover { color: var(--g900); text-decoration-color: var(--g900); } .ink-link:hover .icon { transform: translateX(3px); } }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.5rem; }
 
@@ -250,7 +253,8 @@ main:focus, [tabindex="-1"]:focus { outline: none; }
 /* Lead text sets its own dark ink; on cloth it must read light (g100 on g700 is 8:1, on g900 15:1). */
 .cloth .lead { color: var(--cloth-ink); }
 .cloth a:not(.btn) { text-decoration-color: rgb(248 249 250 / 0.5); }
-.cloth .ink-link { color: var(--cloth-ink); }
+.cloth .ink-link { color: var(--cloth-ink); text-decoration-color: rgb(248 249 250 / 0.5); }
+@media (hover: hover) { .cloth .ink-link:hover { text-decoration-color: var(--cloth-ink); } }
 .cloth .accent { color: var(--cloth-accent); }
 
 /* ---------- Notice strip ---------- */
@@ -441,12 +445,30 @@ html.menu-open { overflow: hidden; }
   .register li:nth-child(2n) { margin-top: 1.75rem; }
 }
 
-/* ---------- Home: the two doors in full ---------- */
-.spread { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
-.spread > * { padding: clamp(2.5rem, 5vw, 5rem) clamp(1.5rem, 4vw, 4rem); }
-.spread__inner { max-width: 640px; }
-.spread__give .spread__inner { margin-left: auto; }
-.spread .h2 + p { margin-top: 1.25rem; }
+/* ---------- Home: the two doors in full, as facing pages ----------
+   Two equal bookcloth pages meet at a shaded spine. On the outside their content
+   lines up with the page wrap; across the spine they share five rows (subgrid):
+   title, lead, note, actions, list, so headings, notes, buttons and lists sit on
+   common lines. Each page leads with its one primary action; the list beneath
+   holds the quieter options. */
+.spread { container-type: inline-size; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto) 1fr; }
+.spread__page {
+  --seam: clamp(2rem, 4vw, 4.5rem);
+  --outer: max(var(--gutter), (100cqw - var(--wrap-max)) / 2);
+  grid-row: 1 / -1;
+  display: grid;
+  grid-template-rows: subgrid;
+  align-content: start;
+  padding-block: clamp(4rem, 2.5rem + 6vw, 7.5rem);
+}
+.spread__give { padding-inline: var(--gutter) var(--seam); padding-inline: var(--outer) var(--seam); box-shadow: inset -1px 0 0 rgb(248 249 250 / 0.07); }
+.spread__study { padding-inline: var(--seam) var(--gutter); padding-inline: var(--seam) var(--outer); background-image: linear-gradient(to right, rgb(33 37 41 / 0.42), transparent 3.5rem), var(--weave); }
+.spread__title { align-self: end; }
+.spread__lead { margin-top: 1.25rem; max-width: 46ch; }
+.spread__note { margin-top: 2.25rem; max-width: 46ch; }
+.spread__note .small { margin-top: 0.35rem; color: var(--g300); }
+.spread__actions { margin-top: 1rem; align-self: start; }
+.spread__list { margin-top: clamp(2.5rem, 4vw, 3.25rem); align-self: start; }
 .ways { margin-top: 2rem; border-top: 1px solid var(--rule-strong); }
 .ways > li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.35rem 1.5rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid var(--rule); }
 .ways__name { font-weight: 600; color: var(--pencil); }
@@ -454,16 +476,19 @@ html.menu-open { overflow: hidden; }
 .cloth .ways__name { color: var(--cloth-ink); }
 .cloth .ways__detail { color: var(--g300); }
 .ways > li > :last-child:not(:first-child) { grid-column: 2; grid-row: 1 / span 2; }
-.criteria { margin-top: 1.75rem; }
-.criteria li { position: relative; padding: 0.7rem 0 0.7rem 1.6rem; border-top: 1px solid var(--rule); }
-.criteria li::before { content: ""; position: absolute; left: 0.2rem; top: 1.35rem; width: 0.55rem; height: 1px; background: var(--cloth-ink); }
-.status-note { margin-top: 1.75rem; padding: 1rem 1.1rem; border-radius: var(--radius); background: rgb(33 37 41 / 0.22); box-shadow: inset 0 0 0 1px var(--rule); }
-.spread .actions { margin-top: 1.75rem; }
+.spread .ways { margin-top: clamp(2.5rem, 4vw, 3.25rem); }
+.criteria { border-top: 1px solid var(--rule-strong); }
+.criteria li { display: flex; align-items: baseline; gap: 0.9rem; padding-block: 0.85rem; border-bottom: 1px solid var(--rule); color: var(--cloth-ink-soft); }
+.criteria li::before { content: ""; flex: none; width: 0.6rem; height: 1px; background: var(--cloth-ink); transform: translateY(-0.32em); }
 @media (max-width: 599px) {
   .ways > li { grid-template-columns: minmax(0, 1fr); }
   .ways > li > :last-child:not(:first-child) { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 0.35rem; }
 }
-@media (max-width: 899px) { .spread { grid-template-columns: 1fr; } .spread__give .spread__inner { margin-left: 0; } }
+@media (max-width: 899px) {
+  .spread { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+  .spread__page { grid-row: auto; display: block; padding: clamp(3.5rem, 10vw, 4.5rem) var(--gutter); }
+  .spread__study { background-image: var(--weave); }
+}
 
 /* ---------- Dinner ---------- */
 .dinner__media { grid-column: 1 / span 4; align-self: center; }

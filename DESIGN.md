@@ -195,7 +195,7 @@ A pinned, fully neutral scale: cool grays from paper (g100) to ink (g900), with 
 
 ## Layout
 
-A centered wrap of `min(100% - 2 × gutter, 1280px)` over a 12-column grid. Leaves stack vertically with `leaf-y` block padding; plain leaves are separated by a g300 hairline, alternate leaves switch to g200, cloth leaves to bookcloth. Compositions are asymmetric: text on 5 to 7 columns, prints on 3 to 6, with the gap column left empty; the 7/5 spread, 5/7 split and 4/7 dinner arrangement recur. Text measure is 62ch for prose and 40ch for leads.
+A centered wrap of `min(100% - 2 × gutter, --wrap-max)` (1280px) over a 12-column grid. Leaves stack vertically with `leaf-y` block padding; plain leaves are separated by a g300 hairline, alternate leaves switch to g200, cloth leaves to bookcloth. Compositions are asymmetric: text on 5 to 7 columns, prints on 3 to 6, with the gap column left empty; the facing-pages spread, 5/7 split and 4/7 dinner arrangement recur. Text measure is 62ch for prose and 40ch for leads.
 
 Prints in groups are deliberately unaligned: the family register staggers every second, third and fourth print downward (0.75 to 3rem), collages offset one print 3.5rem, pairs are unequal (5fr/4fr) and bottom-aligned.
 
@@ -221,7 +221,7 @@ Depth is physical, not interface chrome. The leaf carries a fixed fibrous paper 
 
 ## Shapes
 
-Two radii. Cards and photo containers take one 16px radius (`--radius`, client-pinned 2026-10-06): every print frame and empty slot, the two doors, the status note, the lightbox image and the Donorbox container; video is clipped to it by the print frame. Controls stay near-square at 3px: buttons, the film play button, form fields, menu buttons and the skip link. Photographs are unframed: no border, mat, triangular tabs or rotation, and captions sit level beneath them. Rules are 1px hairlines; margin notes use a dashed g400 rule. Criteria lists are marked with a short 1px dash, not a bullet glyph.
+Two radii. Cards and photo containers take one 16px radius (`--radius`, client-pinned 2026-10-06): every print frame and empty slot, the two doors, the lightbox image and the Donorbox container; video is clipped to it by the print frame. Controls stay near-square at 3px: buttons, the film play button, form fields, menu buttons and the skip link. Photographs are unframed: no border, mat, triangular tabs or rotation, and captions sit level beneath them. Rules are 1px hairlines; margin notes use a dashed g400 rule. Criteria lists are marked with a short 1px dash, not a bullet glyph.
 
 ## Components
 
@@ -231,11 +231,14 @@ Bookcloth and paper: tactile, quiet, never shouting.
 - **Cloth (primary):** g900 with the weave texture and g100 text, Mukta 600 1rem. Used for Donate and the main action of a leaf.
 - **Study:** the same cloth in g700, for scholar-side actions.
 - **Paper:** g100 with a g400 ring and soft drop, for secondary actions on cloth or leaf.
-- **Hover / Focus:** cloth lifts one step (g800); paper goes to g200; the trailing arrow icon slides 3px. Press sinks 1px. Focus is the global 2px g900 outline at 3px offset.
-- **Ink link:** underlined text link (g500 underline, 0.3em offset) with a trailing arrow, 44px tall; underline darkens to g900 on hover.
+- **Hover / Focus:** cloth lifts one step (g800); paper goes to g200; the trailing arrow icon slides 3px. Press sinks 1px. Focus is the global 2px g900 outline at 3px offset, switched to g100 inside cloth and the notice strip so it never disappears on a dark ground.
+- **Ink link:** underlined text link (g500 underline, 0.3em offset) with a trailing arrow, 44px tall; underline darkens to g900 on hover (on cloth: g100 text, half-opacity g100 underline that turns solid). `ink-link--button` gives a `<button>` the same look, for actions that must not compete with a page’s primary button (Copy address).
 
 ### Doors
 The two front doors, give and study, made as bookcloth panels. Give is g900, study is g700; both weave-textured with a 16px radius and cloth drop. A Montserrat title, then 44px link rows separated by translucent g100 hairlines, each ending in an arrow that brightens and slides on hover.
+
+### Spread (facing pages)
+The home page’s two doors in full: two equal bookcloth pages (give g900, study g700) meeting at a spine, where the study page takes a 3.5rem g900 shade and the give page a 1px g100 edge at 7%. Outside edges align to the page wrap (`max(gutter, (100cqw - wrap-max) / 2)` via a container query unit); the inner gutter either side of the spine is `clamp(2rem, 4vw, 4.5rem)`; block padding `clamp(4rem, 2.5rem + 6vw, 7.5rem)`. Both pages share five subgrid rows (title, lead, note, actions, list) so headings bottom-align and notes, buttons and lists sit on common lines. Hierarchy per page: Montserrat h2, a 46ch lead, a Kalam note (“Give by card…” / “Applications are closed…”), exactly one paper button (Give online / Who qualifies) with at most an ink link beside it, then the quieter list (ways, or dash-marked criteria) under a g400 rule. Below 900px the pages stack and the rows flow in the same order.
 
 ### Prints and Slots
 The signature component. A print is an unframed photograph: the image fills a frame clipped to the 16px radius (overflow hidden, isolated), with a g300 placeholder fill while it loads, no border, no resting shadow and no rotation, and a level pencil caption beneath. Aspect ratios: portrait 4:5, tall 3:4, landscape 4:3, wide 16:10, square. A video print sits inside the same rounded frame, shows a poster with a centered paper play button (48px, 3px) and swaps to native controls on click. On donate, the Donorbox form sits in a print frame filled g100 with a 1px g300 outer ring, 16px radius and no padding. In the gallery lightbox the image takes the same radius on a g300 fill with the lifted shadow.
