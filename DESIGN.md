@@ -209,9 +209,9 @@ A pinned, fully neutral scale: cool grays from paper (g100) to ink (g900), with 
 
 A centered wrap of `min(100% - 2 × gutter, --wrap-max)` (1280px) over a 12-column grid. Leaves stack vertically with `leaf-y` block padding; plain leaves are separated by a g300 hairline, alternate leaves switch to g200, cloth leaves to bookcloth. Compositions are asymmetric: text on 5 to 7 columns, prints on 3 to 6, with the gap column left empty; the facing-pages spread, 5/7 split and 4/7 dinner arrangement recur. Text measure is 62ch for prose and 40ch for leads.
 
-Prints in groups are deliberately unaligned: the family register staggers every second, third and fourth print downward (0.75 to 3rem), collages offset one print 3.5rem, pairs are unequal (5fr/4fr) and bottom-aligned.
+Prints in groups are deliberately unaligned: the family register staggers every second, third and fourth print downward (0.75 to 3rem), pairs are unequal (5fr/4fr) and bottom-aligned.
 
-**Home frontispiece.** At 900px and up the icon painting fills the right 64% of the hero, masked into the leaf at its left and bottom, and ends above the hero edge so the caption sits on plain paper; the young Vargis print (max 240px) is mounted over the fade at columns 9 to 11. The copy takes the left six columns. Below 900px the painting becomes a full-width art band (62vw, max 460px) fading at its bottom, and the print shrinks to a 104px mounted print pinned top-right over the band with its caption set beside it, right-aligned.
+**Home frontispiece.** At 900px and up the icon painting fills the right 64% of the hero, masked into the leaf at its left and bottom and running to the hero’s lower edge; nothing is mounted over it (the young Vargis portrait and its caption were removed by client decision, 2026-10-13). The copy takes the left six columns. Below 900px the painting becomes a full-width art band (62vw, max 460px) fading at its bottom, and the copy follows it with `clamp(1.5rem, 6vw, 2.25rem)` of top padding.
 
 **Hero pill.** The two front actions sit in one inline pill under the frontispiece lead (margin-top `clamp(2rem, 4vw, 2.75rem)`), never wrapping; below 380px its halves tighten to 0.95rem inline padding.
 

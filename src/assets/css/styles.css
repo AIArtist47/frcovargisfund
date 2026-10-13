@@ -357,8 +357,8 @@ html.menu-open { overflow: hidden; }
 
 /* ---------- Home: frontispiece ---------- */
 .frontis { position: relative; overflow: hidden; overflow: clip; isolation: isolate; }
-/* The painting ends above the hero edge so the caption sits on plain paper. */
-.frontis__art { position: absolute; z-index: -1; inset: 0 0 calc(clamp(3rem, 7vw, 5.5rem) + 3.25rem) auto; width: 64%; }
+/* The painting runs to the hero’s lower edge and fades into the paper at its left and bottom. */
+.frontis__art { position: absolute; z-index: -1; inset: 0 0 0 auto; width: 64%; }
 .frontis__art img {
   width: 100%; height: 100%; object-fit: cover; object-position: 42% 26%;
   filter: saturate(0.92);
@@ -370,9 +370,6 @@ html.menu-open { overflow: hidden; }
 .frontis__grid { min-height: clamp(540px, 78dvh, 760px); align-items: center; padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem); }
 .frontis__copy { grid-column: 1 / span 6; }
 .frontis__copy .lead { margin-top: 1.5rem; }
-.frontis__mount { grid-column: 9 / span 3; align-self: end; margin-bottom: -1rem; }
-.frontis__mount .print { max-width: 240px; margin-left: auto; }
-.frontis__mount .print__cap { color: var(--g900); font-weight: 400; }
 /* The two front doors as one pill (client decision, 2026-10-13): Donate is the cloth
    half, I’m a student the paper half. Fully round by request, unlike the 3px controls. */
 .cta-pill {
@@ -405,31 +402,14 @@ html.menu-open { overflow: hidden; }
     -webkit-mask-image: linear-gradient(to top, transparent 0, #000 24%);
     mask-image: linear-gradient(to top, transparent 0, #000 24%);
   }
-  .frontis__grid { min-height: 0; padding-top: 5.75rem; margin-top: 0; position: relative; }
+  .frontis__grid { min-height: 0; padding-top: clamp(1.5rem, 6vw, 2.25rem); margin-top: 0; position: relative; }
   .frontis__copy { grid-column: 1 / -1; }
-  /* Span the whole grid: an absolute grid child takes its grid area as its containing block. */
-  .frontis__mount { grid-column: 1 / -1; position: absolute; top: -5.5rem; right: 0; margin: 0; }
-  .frontis__mount .print { display: flex; flex-direction: row-reverse; align-items: flex-end; gap: 0.85rem; max-width: none; margin: 0; }
-  .frontis__mount .print__frame { width: 104px; flex: none; }
-  .frontis__mount .print__cap { margin: 0 0 0.35rem; max-width: 15ch; text-align: right; }
 }
 
-/* ---------- Home: Achen ---------- */
-.achen__text { grid-column: 1 / span 5; align-self: start; position: sticky; top: 7rem; }
-.achen__text .h2 + * { margin-top: 1.5rem; }
-.achen__text .actions { margin-top: 1.5rem; }
-.achen__notes { margin-top: 2.25rem; max-width: 34rem; }
-.collage { grid-column: 7 / span 6; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.75rem); }
-.collage__a { grid-column: 1 / span 5; grid-row: 1; }
-.collage__c { grid-column: 1 / span 3; grid-row: 2; align-self: start; }
-.collage__b { grid-column: 4 / span 3; grid-row: 2; align-self: start; margin-top: 3.5rem; }
+/* ---------- Margin notes ---------- */
 .notes li { padding-block: 0.7rem; border-top: 1px dashed var(--rule-strong); }
 .notes li:first-child { border-top: 0; padding-top: 0; }
 .notes .pencil { display: block; }
-@media (max-width: 899px) {
-  .achen__text { grid-column: 1 / -1; position: static; }
-  .collage { grid-column: 1 / -1; }
-}
 
 /* ---------- Home: the family register ---------- */
 .family__head { grid-column: 1 / span 7; }
@@ -533,7 +513,6 @@ html.menu-open { overflow: hidden; }
 
 
 /* ---------- Gatherings ---------- */
-.gatherings__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem 2rem; }
 .entries { margin-top: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--rule-strong); }
 .entry {
   display: grid; grid-template-columns: 9rem minmax(0, 1fr) 7rem; gap: 0.5rem 2rem; align-items: center;
